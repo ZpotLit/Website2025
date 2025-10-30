@@ -6,8 +6,8 @@
 <title>ZpotLit | Inspiring Innovation & Tech</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0b0b0b;color:#fff;overflow-x:hidden;transition:background 0.3s,color 0.3s;}
-header{background:#121212;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;position:sticky;top:0;z-index:1000;}
+body{background:#0b0b0b;color:#fff;transition:background 0.3s,color 0.3s;}
+header{background:#121212;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
 header img{height:45px;width:auto;}
 header h1{color:red;font-size:22px;font-weight:700;display:flex;align-items:center;gap:10px;}
 .menu-toggle{font-size:26px;cursor:pointer;color:red;background:none;border:none;}
@@ -43,9 +43,10 @@ form{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
 input,textarea{padding:10px;border:none;border-radius:5px;background:#222;color:#fff;}
 button{padding:10px 15px;background:red;color:#fff;border:none;border-radius:5px;}
 .light-mode{background:#f5f5f5;color:#000;}
-.light-mode header{background:#fff;border-bottom:1px solid #ccc;}
+.light-mode header{background:#fff;}
 .light-mode .menu,.light-mode .options,.light-mode .column,.light-mode .card,.light-mode .gallery-item{background:#fff;box-shadow:0 0 10px rgba(0,0,0,0.1);}
 .light-mode a,.light-mode h2,.light-mode h3{color:red;}
+.success-msg{color:limegreen;margin-top:10px;}
 </style>
 </head>
 <body>
@@ -77,7 +78,6 @@ button{padding:10px 15px;background:red;color:#fff;border:none;border-radius:5px
     <img src="logo.png" alt="ZpotLit Logo" style="height:90px;margin-bottom:10px;">
     <h2>Welcome to ZpotLit</h2>
     <p>Inspiring innovation and empowering creators across Africa. ZpotLit helps developers, tech enthusiasts, and innovators build stunning digital experiences directly from their mobile devices.</p>
-    <p>We believe innovation should be simple, accessible, and limitless. Join us in shaping the future of mobile tech innovation!</p>
     <a href="https://wa.me/2347014402070" target="_blank">💬 Chat on WhatsApp</a>
   </div>
   <footer>© ZpotLit | All Rights Reserved</footer>
@@ -89,11 +89,11 @@ button{padding:10px 15px;background:red;color:#fff;border:none;border-radius:5px
   <div class="portfolio-grid">
     <div class="card">
       <h3>ZpotChat</h3>
-      <p>A real-time mobile chat platform that lets creators and innovators connect, share ideas, and collaborate globally — right from their phones.</p>
+      <p>A real-time mobile chat platform for creators and innovators to connect and collaborate globally.</p>
     </div>
     <div class="card">
       <h3>ZpotStore</h3>
-      <p>A mobile-friendly marketplace where developers can sell, share, or showcase their apps, templates, and creative projects.</p>
+      <p>A mobile-friendly marketplace where developers can sell, share, or showcase their apps and creative projects.</p>
     </div>
     <div class="card">
       <h3>ZpotPlay</h3>
@@ -110,7 +110,7 @@ button{padding:10px 15px;background:red;color:#fff;border:none;border-radius:5px
   <div class="portfolio-grid">
     <div class="card">
       <h3>Quiz N Cash</h3>
-      <p>An interactive mobile quiz app that rewards users for their knowledge. Fun, engaging, and educational.</p>
+      <p>An interactive mobile quiz app that rewards users for their knowledge.</p>
     </div>
     <div class="card">
       <h3>Slide Tiles</h3>
@@ -128,10 +128,10 @@ button{padding:10px 15px;background:red;color:#fff;border:none;border-radius:5px
 <div id="gallery" class="screen">
   <h2>Gallery</h2>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="screenshot1.jpg" alt="Project Screenshot 1"></div>
-    <div class="gallery-item"><img src="screenshot2.jpg" alt="Project Screenshot 2"></div>
-    <div class="gallery-item"><img src="screenshot3.jpg" alt="Project Screenshot 3"></div>
-    <div class="gallery-item"><img src="screenshot4.jpg" alt="Project Screenshot 4"></div>
+    <div class="gallery-item"><img src="screenshot1.jpg" alt="Screenshot 1"></div>
+    <div class="gallery-item"><img src="screenshot2.jpg" alt="Screenshot 2"></div>
+    <div class="gallery-item"><img src="screenshot3.jpg" alt="Screenshot 3"></div>
+    <div class="gallery-item"><img src="screenshot4.jpg" alt="Screenshot 4"></div>
     <div class="gallery-item"><img src="image1.jpg" alt="QR Code 1"></div>
     <div class="gallery-item"><img src="image2.jpg" alt="QR Code 2"></div>
   </div>
@@ -144,20 +144,25 @@ button{padding:10px 15px;background:red;color:#fff;border:none;border-radius:5px
   <div class="about-columns">
     <div class="column">
       <h3>Vision</h3>
-      <p>To become Africa’s most innovative mobile tech hub, nurturing creators who turn imagination into real digital solutions.</p>
+      <p>To become Africa’s most innovative mobile tech hub, nurturing future creators who can turn imagination into global digital solutions through creativity, learning, and collaboration.</p>
     </div>
     <div class="column">
       <h3>Mission</h3>
-      <p>Empowering individuals to create apps and digital tools directly from their phones, promoting creativity and accessibility.</p>
+      <p>Our mission is to simplify technology creation for everyone — empowering individuals to build functional, beautiful apps directly from their phones.</p>
     </div>
     <div class="column">
       <h3>Core Values</h3>
       <ul>
-        <li><b>Innovation:</b> We embrace creativity and new ideas.</li>
-        <li><b>Accessibility:</b> We make learning tech simple and open to all.</li>
-        <li><b>Integrity:</b> Honesty and transparency guide our work.</li>
-        <li><b>Excellence:</b> We aim for top-quality results every time.</li>
+        <li><strong>Innovation:</strong> We embrace creativity and encourage bold ideas.</li>
+        <li><strong>Accessibility:</strong> Making technology learning and creation available to everyone.</li>
+        <li><strong>Collaboration:</strong> Working together to build meaningful digital solutions.</li>
+        <li><strong>Integrity:</strong> We value honesty, transparency, and ethical practices.</li>
+        <li><strong>Excellence:</strong> Striving for the highest standards in everything we build.</li>
       </ul>
+    </div>
+    <div class="column">
+      <h3>Aim</h3>
+      <p>To provide learning tools, mentorship, and a supportive ecosystem where innovators can grow, build, and deploy their projects confidently.</p>
     </div>
   </div>
   <footer>© ZpotLit | All Rights Reserved</footer>
@@ -166,29 +171,47 @@ button{padding:10px 15px;background:red;color:#fff;border:none;border-radius:5px
 <!-- CONTACT -->
 <div id="contact" class="screen">
   <h2>Contact Us</h2>
-  <p>We’d love to hear from you! Fill out the form below.</p>
-  <form action="https://formspree.io/f/xgvpyzka" method="POST" onsubmit="submitted(event,this)">
+  <p>We’d love to hear from you! Fill the form below to get in touch.</p>
+  <form action="https://formspree.io/f/xgvpyzka" method="POST" onsubmit="showSuccess(event,'contact-success')">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
+    <div id="contact-success" class="success-msg" style="display:none;">Message sent successfully!</div>
   </form>
 
   <h2 style="margin-top:30px;">Suggestion Box</h2>
-  <form action="https://formspree.io/f/xgvpyzka" method="POST" onsubmit="submitted(event,this)">
+  <p>Got an idea or feature suggestion? Let’s hear it below 👇</p>
+  <form action="https://formspree.io/f/xgvpyzka" method="POST" onsubmit="showSuccess(event,'suggestion-success')">
     <textarea name="suggestion" placeholder="Enter your suggestion..." required></textarea>
     <button type="submit">Submit Suggestion</button>
+    <div id="suggestion-success" class="success-msg" style="display:none;">Suggestion submitted successfully!</div>
   </form>
-  <p style="margin-top:15px;">📞 +2347014402070 | 📧 solomone393@gmail.com</p>
-  <footer>© ZpotLit | All Rights Reserved</footer>
+
+  <footer>📧 solomone393@gmail.com | © ZpotLit | All Rights Reserved</footer>
 </div>
 
 <script>
-function toggleMenu(){document.getElementById("menu").classList.toggle("active");}
-function toggleOptions(){document.getElementById("options").classList.toggle("active");}
-function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
-function setTheme(mode){if(mode==='light'){document.body.classList.add('light-mode');}else{document.body.classList.remove('light-mode');}}
-function submitted(e,form){e.preventDefault();fetch(form.action,{method:"POST",body:new FormData(form)}).then(()=>{alert("✅ Message sent successfully!");form.reset();}).catch(()=>{alert("❌ Failed to send message.");});}
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('menu').classList.remove('active');
+}
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+function toggleOptions(){
+  document.getElementById('options').classList.toggle('active');
+}
+function setTheme(mode){
+  if(mode==='dark'){document.body.classList.remove('light-mode');}
+  else{document.body.classList.add('light-mode');}
+}
+function showSuccess(e,id){
+  e.preventDefault();
+  document.getElementById(id).style.display='block';
+  e.target.reset();
+}
 </script>
 
 </body>
