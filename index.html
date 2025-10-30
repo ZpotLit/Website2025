@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZpotLit | Inspiring Innovation & Tech</title>
+<style>
+/* Reset & basics */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0b0b0b;color:#fff;overflow-x:hidden;transition:0.3s;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;transition:0.3s;}
+.light{background:#f5f5f5;color:#0b0b0b;}
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;background:#121212;position:sticky;top:0;z-index:1000;}
+header img{height:50px;}
+.hamburger{font-size:28px;cursor:pointer;}
+.menu{position:fixed;top:0;left:-250px;width:250px;height:100%;background:#1a1a1a;padding:20px;transition:0.3s;z-index:1001;overflow-y:auto;}
+.menu.active{left:0;}
+.menu a{display:block;padding:10px 0;font-weight:500;color:#fff;}
+.menu a:hover{color:red;}
+.menu hr{margin:10px 0;border:0;border-top:1px solid #333;}
+/* Sections */
+.screen{display:none;padding:20px;margin-top:60px;}
+.screen.active{display:block;}
+h2{color:red;margin-bottom:15px;}
+h3{color:red;margin-bottom:8px;margin-top:0;}
+p, li{margin-bottom:10px;line-height:1.6;}
+ul{margin-left:20px;list-style:disc;}
+/* Home */
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:80vh;}
+.hero h2{font-size:28px;margin-bottom:10px;}
+.hero p{max-width:600px;margin-bottom:20px;}
+.hero img{height:100px;margin-bottom:15px;}
+.hero button{padding:12px 20px;background:red;border:none;border-radius:5px;color:#fff;font-weight:500;}
+.hero button:hover{background:#e60000;}
+/* Cards */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.card{background:#1a1a1a;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(255,0,0,0.3);}
+.card:hover{box-shadow:0 0 20px rgba(255,0,0,0.5);}
+.card button{margin-top:10px;padding:8px 12px;background:red;border:none;border-radius:5px;color:#fff;}
+.card button:hover{background:#e60000;}
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;}
+.gallery img{width:100%;border-radius:8px;}
+/* Form */
+form{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+input,textarea{padding:10px;border:none;border-radius:5px;background:#222;color:#fff;}
+form button{background:red;color:#fff;padding:10px;border:none;border-radius:5px;}
+form button:hover{background:#e60000;}
+.success-msg{color:lime;margin-top:5px;font-weight:500;}
+/* Footer */
+footer{text-align:center;padding:10px;margin-top:20px;color:#aaa;font-size:14px;}
+/* Theme toggle */
+.theme-toggle{position:fixed;top:15px;right:20px;font-size:22px;cursor:pointer;z-index:1002;}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="hamburger" onclick="toggleMenu()">☰</span>
+  <img src="images/logo.png" alt="ZpotLit Logo">
+</header>
+
+<div class="menu" id="menu">
+  <a href="#" onclick="showScreen('home');toggleMenu()">Home</a>
+  <a href="#" onclick="showScreen('portfolio');toggleMenu()">Portfolio</a>
+  <a href="#" onclick="showScreen('gallery');toggleMenu()">Gallery</a>
+  <a href="#" onclick="showScreen('about');toggleMenu()">About</a>
+  <a href="#" onclick="showScreen('contact');toggleMenu()">Contact</a>
+</div>
+
+<div class="theme-toggle" onclick="toggleTheme()">☀️/🌙</div>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+  <div class="hero">
+    <img src="images/logo.png" alt="ZpotLit Logo">
+    <h2>Welcome to ZpotLit</h2>
+    <p>Inspiring Innovation & Tech. We help creators, developers, and innovators build digital experiences that make an impact.</p>
+    <button onclick="window.open('https://api.whatsapp.com/send?phone=2347014402070&text=Hello%20ZpotLit!','_blank')">💬 Chat on WhatsApp</button>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<div id="portfolio" class="screen">
+  <h2>Portfolio</h2>
+  <div class="cards-grid">
+    <div class="card">
+      <h3>ZpotPlay</h3>
+      <p>Interactive mobile games created with creativity and fun. Explore exciting gaming experiences.</p>
+      <button onclick="showScreen('projects')">See Projects</button>
+    </div>
+    <div class="card">
+      <h3>ZpotChat</h3>
+      <p>A chat platform for seamless connection between innovators and developers.</p>
+    </div>
+    <div class="card">
+      <h3>ZpotStore</h3>
+      <p>A digital marketplace where creators can upload, share, and sell their apps and templates.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS (accessible only via Portfolio) -->
+<div id="projects" class="screen">
+  <h2>Projects</h2>
+  <div class="cards-grid">
+    <div class="card">
+      <h3>Quiz N Cash</h3>
+      <p>Fun quiz game with rewards for correct answers.</p>
+    </div>
+    <div class="card">
+      <h3>Slide Tiles</h3>
+      <p>Engaging sliding puzzle game with multiple levels.</p>
+    </div>
+    <div class="card">
+      <h3>Arcade Games</h3>
+      <p>Classic arcade-style games with high-score challenges.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="screen">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="images/screenshot1.jpg" alt="Screenshot 1">
+    <img src="images/screenshot2.jpg" alt="Screenshot 2">
+    <img src="images/screenshot3.jpg" alt="Screenshot 3">
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="screen">
+  <h2>About Us</h2>
+  <p>ZpotLit is Africa’s innovative mobile tech hub, nurturing creators who turn imagination into digital solutions.</p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="screen">
+  <h2>Contact Us</h2>
+  <p>We’d love to hear from you! Fill the form below to get in touch.</p>
+
+  <form onsubmit="sendMessage(event)">
+    <input type="text" placeholder="Your Name" required id="name">
+    <input type="email" placeholder="Your Email" required id="email">
+    <textarea placeholder="Your Message" required id="message"></textarea>
+    <button type="submit">Send Message</button>
+    <div id="msg-success" class="success-msg"></div>
+  </form>
+
+  <h2>Suggestion Box</h2>
+  <form onsubmit="sendSuggestion(event)">
+    <textarea placeholder="Enter your suggestion..." required id="suggestion"></textarea>
+    <button type="submit">Submit Suggestion</button>
+    <div id="suggestion-success" class="success-msg"></div>
+  </form>
+</div>
+
+<footer>
+  &copy; ZpotLit | All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('menu').classList.toggle('active');}
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function sendMessage(e){
+  e.preventDefault();
+  document.getElementById('msg-success').innerText="Message sent successfully!";
+  document.getElementById('name').value='';
+  document.getElementById('email').value='';
+  document.getElementById('message').value='';
+}
+function sendSuggestion(e){
+  e.preventDefault();
+  document.getElementById('suggestion-success').innerText="Suggestion submitted successfully!";
+  document.getElementById('suggestion').value='';
+}
+function toggleTheme(){document.body.classList.toggle('light');}
+</script>
+
+</body>
+</html>
