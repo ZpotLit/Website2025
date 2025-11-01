@@ -45,8 +45,7 @@ body.light .project h3{color:#b71c1c;}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:20px;}
 .gallery-grid img{width:100%;border-radius:10px;}
 input,textarea{padding:10px;border-radius:5px;border:1px solid #ccc;width:100%;margin-bottom:5px;}
-.theme-btn{font-size:1.2em;color:#fff;cursor:pointer;position:absolute;top:15px;right:20px;user-select:none;}
-body.light .theme-btn{color:#fff;}
+.theme-btn{position:absolute;top:15px;right:20px;}
 .switch{position:relative;display:inline-block;width:50px;height:26px;}
 .switch input{opacity:0;width:0;height:0;}
 .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#888;transition:.4s;border-radius:34px;}
@@ -54,20 +53,6 @@ body.light .theme-btn{color:#fff;}
 input:checked + .slider{background:#d62828;}
 input:checked + .slider:before{transform:translateX(24px);}
 .success-msg{color:green;margin-top:5px;display:none;}
-.news-menu{display:flex;justify-content:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
-.news-menu button{padding:8px 15px;border:none;border-radius:5px;cursor:pointer;background:#444;color:#fff;transition:0.3s;}
-.news-menu button.active{background:#d62828;}
-.news-menu button:hover{background:#b71c1c;}
-.news-list{max-height:400px;overflow:hidden;text-align:left;padding:0 10px;position:relative;}
-.news-item{margin-bottom:15px;padding:10px;border-radius:10px;border-bottom:1px solid #555;transition:0.3s;}
-.news-item a{color:#fff;font-weight:600;text-decoration:none;}
-body.light .news-item{background:#f0f0f0;border-bottom:1px solid #ccc;}
-body.light .news-item a{color:#000;}
-.news-item p{margin-top:5px;font-size:0.95em;color:#ccc;}
-body.light .news-item p{color:#333;}
-.news-controls{display:flex;justify-content:center;gap:10px;margin-bottom:10px;}
-.news-controls button{padding:5px 12px;border:none;border-radius:5px;background:#444;color:#fff;cursor:pointer;}
-.news-controls button:hover{background:#b71c1c;}
 </style>
 </head>
 <body>
@@ -95,33 +80,22 @@ body.light .news-item p{color:#333;}
 <main>
 <section id="home" class="active">
 <h1>Welcome to ZpotLit</h1>
-<p>We are a hub where innovation meets imagination. Explore exciting projects, discover creative solutions, and connect with a global network of innovators.</p>
-<p>Join our community to stay updated with daily tech trends, creative ideas, and global news that inspire action and innovation.</p>
-<p>Start your journey here and bring your ideas to life with ZpotLit!</p>
+<p>We transform your ideas into impactful digital experiences. Explore cutting-edge projects, resources, and join a community of innovators, developers, and creators to learn, collaborate, and bring ideas to life. Get inspired, create, and connect with like-minded individuals around the globe.</p>
 <button onclick="openWhatsApp()">💬 Chat on WhatsApp</button>
 </section>
 
 <section id="portfolio">
 <h1>Portfolio</h1>
-<div class="project"><h3>ZpotPlay 🎮</h3><p>Interactive gaming platform featuring multiplayer challenges and real-time gameplay.</p></div>
-<div class="project"><h3>ZpotChat 💬</h3><p>Messaging platform connecting creators worldwide with collaborative features.</p></div>
-<div class="project"><h3>ZpotStore 🛒</h3><p>Marketplace for creators to showcase and monetize digital products.</p></div>
+<div class="project"><h3>ZpotPlay 🎮</h3><p>Interactive gaming platform for all ages with unique multiplayer features.</p></div>
+<div class="project"><h3>ZpotChat 💬</h3><p>Messaging platform connecting creators worldwide with instant updates.</p></div>
+<div class="project"><h3>ZpotStore 🛒</h3><p>Marketplace for creators to showcase and monetize apps efficiently.</p></div>
+
 <div class="project">
 <h3>ZpotNews 📰</h3>
-<div class="news-menu">
-<button class="active" data-category="world" onclick="switchNews(this)">World News</button>
-<button data-category="sports" onclick="switchNews(this)">Sports</button>
-<button data-category="tech" onclick="switchNews(this)">Tech</button>
+<p>Stay updated with the latest news and stories. Visit our ZpotLit News site for more: <a href="https://zpot-lit-news.vercel.app/" target="_blank" style="color:#d62828;">Go to ZpotLit News</a></p>
 </div>
-<div class="news-controls">
-<button onclick="manualScroll(-1)">⬆️ Up</button>
-<button onclick="manualScroll(1)">⬇️ Down</button>
-<button onclick="toggleAutoScroll()">⏯️ Pause/Play</button>
-<button onclick="loadNews()">🔄 Refresh</button>
-</div>
-<div class="news-list" id="newsList"></div>
-</div>
-<div class="project"><h3>ZpotLearn 📚</h3><p>Mobile-first e-learning platform for coding and design tutorials with interactive lessons.</p></div>
+
+<div class="project"><h3>ZpotLearn 📚</h3><p>Mobile-first e-learning platform for coding & design, tutorials, and community support.</p></div>
 </section>
 
 <section id="gallery">
@@ -136,16 +110,12 @@ body.light .news-item p{color:#333;}
 
 <section id="about">
 <h1>About Us</h1>
-<p>ZpotLit empowers innovators through tech, design, and inspiration. We provide a collaborative environment to turn ideas into impactful digital solutions worldwide.</p>
-<h2>Mission</h2>
-<p>Provide tools, resources, and community support for creators to innovate and grow.</p>
-<h2>Vision</h2>
-<p>Be the leading hub for global digital innovation and creative collaboration.</p>
+<p>ZpotLit empowers innovators through tech, design, and inspiration. Our mission is to nurture creativity and bring ideas to life. Our vision is a world where innovation transforms lives. Join our community to collaborate, learn, and innovate. We believe in continuous learning, community engagement, and fostering opportunities for creators everywhere.</p>
 </section>
 
 <section id="contact">
 <h1>Contact Us</h1>
-<form id="contactForm">
+<form id="contactForm" action="https://formspree.io/f/xblpppda" method="POST">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="_replyto" placeholder="Your Email" required>
 <textarea name="message" placeholder="Your Message" required></textarea>
@@ -153,10 +123,9 @@ body.light .news-item p{color:#333;}
 <p class="success-msg" id="contactSuccess">Message sent successfully!</p>
 </form>
 
-<h2>Suggestions</h2>
+<h2 style="margin-top:50px;">Suggestion Box</h2>
 <form id="suggestionForm">
-<input type="text" name="title" placeholder="Suggestion Title" required>
-<textarea name="suggestion" placeholder="Your Suggestion" required></textarea>
+<textarea name="suggestion" placeholder="Enter your suggestion..." required></textarea>
 <button type="submit">Submit Suggestion</button>
 <p class="success-msg" id="suggestionSuccess">Suggestion submitted successfully!</p>
 </form>
@@ -180,78 +149,21 @@ function openWhatsApp(){window.open('https://api.whatsapp.com/send?phone=2347014
 // Theme
 function toggleTheme(){document.body.classList.toggle('light');}
 
-// News
-const apiKey="7c745f33317d4a1699d82f6b0f59e28d";
-let newsData={}, currentCategory='world', currentIndex=0, autoScroll=true;
-const newsList=document.getElementById('newsList');
-
-function getTodayDate(){ let d = new Date(); return d.toISOString().split('T')[0]; }
-
-async function fetchNews(cat){
-  let today = getTodayDate();
-  let query = cat==='world'?'Africa OR Nigeria OR Global':'';
-  if(cat==='sports') query='Sports';
-  if(cat==='tech') query='Technology';
-  let url = `https://gnews.io/api/v4/search?q=${query}&from=${today}&lang=en&max=10&token=${apiKey}`;
-  try{
-    const res = await fetch(url);
-    const data = await res.json();
-    return data.articles||[];
-  }catch(e){ console.error(cat,e); return []; }
-}
-
-async function loadNews(){
-  newsData.world = await fetchNews('world');
-  newsData.sports = await fetchNews('sports');
-  newsData.tech = await fetchNews('tech');
-  displayNews();
-}
-
-function displayNews(){
-  newsList.innerHTML='';
-  const articles = newsData[currentCategory] || [];
-  if(!articles.length){newsList.innerHTML='<p>No news available today</p>'; return;}
-  articles.forEach(item=>{
-    const div=document.createElement('div'); div.classList.add('news-item');
-    div.innerHTML=`<a href="${item.url}" target="_blank">${item.title}</a>
-                     <p>${new Date(item.publishedAt).toLocaleString()}</p>
-                     <p>${item.description}</p>`;
-    newsList.appendChild(div);
-  });
-}
-
-function switchNews(btn){
-  document.querySelectorAll('.news-menu button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  currentCategory=btn.dataset.category;
-  displayNews();
-}
-
-function manualScroll(dir){
-  const items=newsList.children;
-  if(!items.length) return;
-  currentIndex=(currentIndex+dir+items.length)%items.length;
-  items[currentIndex].scrollIntoView({behavior:'smooth'});
-}
-
-function toggleAutoScroll(){autoScroll=!autoScroll;}
-setInterval(()=>{if(autoScroll) manualScroll(1);},5000);
-
 // Forms
-document.getElementById('contactForm').addEventListener('submit', e=>{
-  e.preventDefault();
-  document.getElementById('contactSuccess').style.display='block';
-  e.target.reset();
+document.getElementById('contactForm').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const response = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
+    if(response.ok){ document.getElementById('contactSuccess').style.display='block'; form.reset(); }
+    else{ alert("There was a problem sending your message."); }
 });
 
 document.getElementById('suggestionForm').addEventListener('submit', e=>{
-  e.preventDefault();
-  document.getElementById('suggestionSuccess').style.display='block';
-  e.target.reset();
+    e.preventDefault();
+    document.getElementById('suggestionSuccess').style.display='block';
+    e.target.reset();
 });
-
-window.onload=loadNews;
 </script>
-
 </body>
 </html>
