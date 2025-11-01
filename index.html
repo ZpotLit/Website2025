@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZpotLit | Innovation & Daily News</title>
+<meta name="description" content="ZpotLit empowers creators and innovators by transforming ideas into digital experiences. Explore projects, news, and a global community.">
+<meta name="keywords" content="ZpotLit, Innovation, Tech, News, Projects, Learning, Community, Nigeria, Africa, Global">
+<meta name="author" content="ZpotLit">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#121212;color:#fff;transition:0.3s;}
@@ -27,8 +30,8 @@ body.light .sidebar ul li a:hover{background:#b71c1c;color:#fff;}
 main{padding-top:100px;text-align:center;}
 section{display:none;min-height:100vh;padding:60px 25px;margin:15px auto;border-radius:10px;max-width:1000px;transition:0.3s;}
 section.active{display:block;}
-h1,h2{color:#d62828;margin-bottom:15px;}
-body.light h1,h2{color:#b71c1c;}
+h1,h2,h3{color:#d62828;margin-bottom:15px;}
+body.light h1,h2,h3{color:#b71c1c;}
 p{line-height:1.7;margin-bottom:15px;font-size:1.1em;}
 button{background:#d62828;border:none;color:#fff;padding:12px 22px;border-radius:8px;margin-top:10px;cursor:pointer;font-weight:600;font-size:1.05em;}
 body.light button{background:#b71c1c;color:#fff;}
@@ -53,6 +56,10 @@ input,textarea{padding:10px;border-radius:5px;border:1px solid #ccc;width:100%;m
 input:checked + .slider{background:#d62828;}
 input:checked + .slider:before{transform:translateX(24px);}
 .success-msg{color:green;margin-top:5px;display:none;}
+.community{background:#1e1e1e;padding:20px;margin:20px auto;border-radius:10px;max-width:800px;}
+.community h2{color:#d62828;margin-bottom:10px;}
+body.light .community{background:#f0f0f0;}
+body.light .community h2{color:#b71c1c;}
 </style>
 </head>
 <body>
@@ -80,22 +87,26 @@ input:checked + .slider:before{transform:translateX(24px);}
 <main>
 <section id="home" class="active">
 <h1>Welcome to ZpotLit</h1>
-<p>We transform your ideas into impactful digital experiences. Explore cutting-edge projects, resources, and join a community of innovators, developers, and creators to learn, collaborate, and bring ideas to life. Get inspired, create, and connect with like-minded individuals around the globe.</p>
+<p>We transform ideas into impactful digital experiences. Explore projects, news, and resources that spark creativity. Join our global community to learn, collaborate, and bring ideas to life that can transform the world.</p>
+
+<div class="community">
+<h2>Join Our Community</h2>
 <button onclick="openWhatsApp()">💬 Chat on WhatsApp</button>
+<button onclick="window.open('https://zpot-lit-news.vercel.app/','_blank')">📰 Visit ZpotLit News</button>
+</div>
 </section>
 
 <section id="portfolio">
 <h1>Portfolio</h1>
-<div class="project"><h3>ZpotPlay 🎮</h3><p>Interactive gaming platform for all ages with unique multiplayer features.</p></div>
-<div class="project"><h3>ZpotChat 💬</h3><p>Messaging platform connecting creators worldwide with instant updates.</p></div>
-<div class="project"><h3>ZpotStore 🛒</h3><p>Marketplace for creators to showcase and monetize apps efficiently.</p></div>
-
+<div class="project"><h3>ZpotPlay 🎮</h3><p>Interactive gaming platform with unique multiplayer features.</p></div>
+<div class="project"><h3>ZpotChat 💬</h3><p>Messaging platform connecting creators worldwide.</p></div>
+<div class="project"><h3>ZpotStore 🛒</h3><p>Marketplace for creators to showcase and monetize apps.</p></div>
 <div class="project">
 <h3>ZpotNews 📰</h3>
-<p>Stay updated with the latest news and stories. Visit our ZpotLit News site for more: <a href="https://zpot-lit-news.vercel.app/" target="_blank" style="color:#d62828;">Go to ZpotLit News</a></p>
+<p>Explore the latest news and updates from ZpotLit News.</p>
+<p><a href="https://zpot-lit-news.vercel.app/" target="_blank" style="color:#d62828;">Visit ZpotLit News</a></p>
 </div>
-
-<div class="project"><h3>ZpotLearn 📚</h3><p>Mobile-first e-learning platform for coding & design, tutorials, and community support.</p></div>
+<div class="project"><h3>ZpotLearn 📚</h3><p>E-learning platform for coding, design, and tutorials with community support.</p></div>
 </section>
 
 <section id="gallery">
@@ -110,7 +121,13 @@ input:checked + .slider:before{transform:translateX(24px);}
 
 <section id="about">
 <h1>About Us</h1>
-<p>ZpotLit empowers innovators through tech, design, and inspiration. Our mission is to nurture creativity and bring ideas to life. Our vision is a world where innovation transforms lives. Join our community to collaborate, learn, and innovate. We believe in continuous learning, community engagement, and fostering opportunities for creators everywhere.</p>
+<p>ZpotLit empowers innovators through technology, design, and inspiration. We aim to nurture creativity, provide learning resources, and build a global community of innovators.</p>
+
+<h2>Mission</h2>
+<p>Our mission is to foster innovation, equip creators with skills and tools, and help transform ideas into real-world digital solutions that positively impact society and communities globally.</p>
+
+<h2>Vision</h2>
+<p>Our vision is to become a leading platform for global innovation where every creator can turn ideas into impactful experiences, bridging technology, education, and collaboration to make a meaningful difference in the world.</p>
 </section>
 
 <section id="contact">
@@ -138,31 +155,28 @@ input:checked + .slider:before{transform:translateX(24px);}
 
 <script>
 // Sidebar
-const sidebar = document.getElementById('sidebar');
+const sidebar=document.getElementById('sidebar');
 function openMenu(){sidebar.classList.add('active');}
 function closeMenu(){sidebar.classList.remove('active');}
-function showSection(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');closeMenu();}
-
-// WhatsApp
-function openWhatsApp(){window.open('https://api.whatsapp.com/send?phone=2347014402070&text=Hello ZpotLit!','_blank');}
-
+function showSection(id){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+closeMenu();
+}
 // Theme
 function toggleTheme(){document.body.classList.toggle('light');}
-
+// WhatsApp
+function openWhatsApp(){window.open('https://api.whatsapp.com/send?phone=2347014402070&text=Hello ZpotLit!','_blank');}
 // Forms
-document.getElementById('contactForm').addEventListener('submit', async e=>{
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-    const response = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
-    if(response.ok){ document.getElementById('contactSuccess').style.display='block'; form.reset(); }
-    else{ alert("There was a problem sending your message."); }
+document.getElementById('contactForm').addEventListener('submit',e=>{
+e.preventDefault();
+document.getElementById('contactSuccess').style.display='block';
+e.target.reset();
 });
-
-document.getElementById('suggestionForm').addEventListener('submit', e=>{
-    e.preventDefault();
-    document.getElementById('suggestionSuccess').style.display='block';
-    e.target.reset();
+document.getElementById('suggestionForm').addEventListener('submit',e=>{
+e.preventDefault();
+document.getElementById('suggestionSuccess').style.display='block';
+e.target.reset();
 });
 </script>
 </body>
