@@ -149,7 +149,7 @@ body.light .community h2{color:#b71c1c;}
 </form>
 
 <h2 style="margin-top:50px;">Suggestion Box</h2>
-<form id="suggestionForm">
+<form id="suggestionForm" action="https://formspree.io/f/xblpppda" method="POST">
 <textarea name="suggestion" placeholder="Enter your suggestion..." required></textarea>
 <button type="submit">Submit Suggestion</button>
 <p class="success-msg" id="suggestionSuccess">Suggestion submitted successfully!</p>
@@ -167,24 +167,59 @@ const sidebar=document.getElementById('sidebar');
 function openMenu(){sidebar.classList.add('active');}
 function closeMenu(){sidebar.classList.remove('active');}
 function showSection(id){
-document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-closeMenu();
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  closeMenu();
 }
+
 // Theme
 function toggleTheme(){document.body.classList.toggle('light');}
+
 // WhatsApp
 function openWhatsApp(){window.open('https://api.whatsapp.com/send?phone=2347014402070&text=Hello ZpotLit!','_blank');}
-// Forms
-document.getElementById('contactForm').addEventListener('submit',e=>{
-e.preventDefault();
-document.getElementById('contactSuccess').style.display='block';
-e.target.reset();
+
+// Contact Form
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('contactSuccess').style.display = 'block';
+      form.reset();
+    } else {
+      alert("Oops! There was a problem sending your message.");
+    }
+  } catch (error) {
+    alert("Error sending message. Try again later.");
+  }
 });
-document.getElementById('suggestionForm').addEventListener('submit',e=>{
-e.preventDefault();
-document.getElementById('suggestionSuccess').style.display='block';
-e.target.reset();
+
+// Suggestion Box
+document.getElementById('suggestionForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      document.getElementById('suggestionSuccess').style.display = 'block';
+      form.reset();
+    } else {
+      alert("Oops! There was a problem submitting your suggestion.");
+    }
+  } catch (error) {
+    alert("Error submitting suggestion. Try again later.");
+  }
 });
 </script>
 </body>
