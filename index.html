@@ -11,12 +11,9 @@
 <!-- Google Site Verification -->
 <meta name="google-site-verification" content="oR15iqa6Ptvu-Rjhzsn1uM4iVZEM9bThqxuPT-VhV8U" />
 
-<!-- Sitemap reference -->
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/site.xml">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#121212;color:#fff;transition:0.3s;}
+body{background:#121212;color:#fff;transition:0.3s;display:flex;flex-direction:column;min-height:100vh;}
 body.light{background:#fff;color:#000;}
 header{background:#121212;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;width:100%;z-index:1000;transition:0.3s;}
 body.light header{background:#d62828;}
@@ -34,7 +31,7 @@ body.light .sidebar ul li a{color:#000;}
 .sidebar ul li a:hover{background:#d62828;color:#fff;}
 body.light .sidebar ul li a:hover{background:#b71c1c;color:#fff;}
 .close-btn{font-size:2em;color:#d62828;position:absolute;top:15px;right:20px;cursor:pointer;}
-main{padding-top:100px;text-align:center;}
+main{padding-top:100px;flex:1;}
 section{display:none;min-height:100vh;padding:60px 25px;margin:15px auto;border-radius:10px;max-width:1000px;transition:0.3s;}
 section.active{display:block;}
 h1,h2,h3{color:#d62828;margin-bottom:15px;}
@@ -44,7 +41,7 @@ button{background:#d62828;border:none;color:#fff;padding:12px 22px;border-radius
 body.light button{background:#b71c1c;color:#fff;}
 button:hover{background:#b71c1c;}
 body.light button:hover{background:#d62828;}
-footer{text-align:center;padding:15px;color:#aaa;font-size:.9em;margin-top:30px;font-family:Roman;}
+footer{text-align:center;padding:10px;color:#aaa;font-size:.9em;font-family:Roman;margin-top:20px;}
 footer a{color:#d62828;text-decoration:none;}
 footer a:hover{text-decoration:underline;}
 .project{background:#2a2a2a;margin:20px auto;padding:20px;border-radius:10px;text-align:left;}
@@ -67,6 +64,8 @@ input:checked + .slider:before{transform:translateX(24px);}
 .community h2{color:#d62828;margin-bottom:10px;}
 body.light .community{background:#f0f0f0;}
 body.light .community h2{color:#b71c1c;}
+#consentBanner{position:fixed;bottom:0;width:100%;background:#333;color:#fff;padding:15px;text-align:center;z-index:9999;display:flex;justify-content:center;align-items:center;}
+#consentBanner button{margin-left:10px;padding:5px 12px;background:#d62828;border:none;color:#fff;border-radius:5px;cursor:pointer;}
 </style>
 </head>
 <body>
@@ -95,12 +94,26 @@ body.light .community h2{color:#b71c1c;}
 <section id="home" class="active">
 <h1>Welcome to ZpotLit</h1>
 <p>We transform ideas into impactful digital experiences. Explore projects, news, and resources that spark creativity. Join our global community to learn, collaborate, and bring ideas to life that can transform the world.</p>
+<p>Discover latest innovations, tutorials, and insights across tech, design, and development to help you stay ahead in your creative journey.</p>
 
 <div class="community">
 <h2>Join Our Community</h2>
 <button onclick="openWhatsApp()">💬 Chat on WhatsApp</button>
 <button onclick="window.open('https://zpot-lit-news.vercel.app/','_blank')">📰 Visit ZpotLit News</button>
 </div>
+
+<!-- AdSense under Visit ZpotLit News -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9702899463803987"
+     data-ad-slot="5453842544"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </section>
 
 <section id="portfolio">
@@ -129,10 +142,8 @@ body.light .community h2{color:#b71c1c;}
 <section id="about">
 <h1>About Us</h1>
 <p>ZpotLit empowers innovators through technology, design, and inspiration. We aim to nurture creativity, provide learning resources, and build a global community of innovators.</p>
-
 <h2>Mission</h2>
 <p>Our mission is to foster innovation, equip creators with skills and tools, and help transform ideas into real-world digital solutions that positively impact society and communities globally.</p>
-
 <h2>Vision</h2>
 <p>Our vision is to become a leading platform for global innovation where every creator can turn ideas into impactful experiences, bridging technology, education, and collaboration to make a meaningful difference in the world.</p>
 </section>
@@ -154,11 +165,18 @@ body.light .community h2{color:#b71c1c;}
 <p class="success-msg" id="suggestionSuccess">Suggestion submitted successfully!</p>
 </form>
 </section>
+</main>
 
 <footer>
 <p>© ZpotLit 2025 All Rights Reserved</p>
 <p>📞 +2347014402070 | 📧 solomone393@gmail.com</p>
 </footer>
+
+<!-- Consent Banner -->
+<div id="consentBanner">
+<p>We use cookies to ensure you get the best experience on our website.</p>
+<button onclick="acceptConsent()">Accept</button>
+</div>
 
 <script>
 // Sidebar
@@ -204,6 +222,12 @@ document.getElementById('suggestionForm').addEventListener('submit', async e=>{
     form.reset();
   } else { alert('Oops! There was a problem.'); }
 });
+
+// Consent Banner
+function acceptConsent(){
+  document.getElementById('consentBanner').style.display='none';
+}
 </script>
+
 </body>
 </html>
