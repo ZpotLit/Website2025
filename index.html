@@ -7,11 +7,10 @@
 <meta name="description" content="ZpotLit empowers creators and innovators by transforming ideas into digital experiences. Explore projects, news, and a global community.">
 <meta name="keywords" content="ZpotLit, Innovation, Tech, News, Projects, Learning, Community, Nigeria, Africa, Global">
 <meta name="author" content="ZpotLit">
-
-<!-- Google Site Verification -->
 <meta name="google-site-verification" content="oR15iqa6Ptvu-Rjhzsn1uM4iVZEM9bThqxuPT-VhV8U" />
 
 <style>
+/* --- GENERAL STYLES --- */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#121212;color:#fff;transition:0.3s;display:flex;flex-direction:column;min-height:100vh;}
 body.light{background:#fff;color:#000;}
@@ -102,19 +101,8 @@ body.light .community h2{color:#b71c1c;}
 <button onclick="window.open('https://zpot-lit-news.vercel.app/','_blank')">📰 Visit ZpotLit News</button>
 </div>
 
-<!-- AdSense container, will load after consent -->
-<div id="adsenseContainer" style="display:none;">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987"
-     crossorigin="anonymous"></script>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-9702899463803987"
-       data-ad-slot="5453842544"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
+<!-- AdSense placeholder -->
+<div id="homeAdContainer"></div>
 </section>
 
 <section id="portfolio">
@@ -180,7 +168,7 @@ body.light .community h2{color:#b71c1c;}
 </div>
 
 <script>
-// Sidebar
+// Sidebar functions
 const sidebar=document.getElementById('sidebar');
 function openMenu(){sidebar.classList.add('active');}
 function closeMenu(){sidebar.classList.remove('active');}
@@ -189,47 +177,56 @@ function showSection(id){
   document.getElementById(id).classList.add('active');
   closeMenu();
 }
-// Theme
+
+// Theme toggle
 function toggleTheme(){document.body.classList.toggle('light');}
-// WhatsApp
+
+// WhatsApp link
 function openWhatsApp(){window.open('https://api.whatsapp.com/send?phone=2347014402070&text=Hello ZpotLit!','_blank');}
 
 // Contact Form
 document.getElementById('contactForm').addEventListener('submit', async e=>{
   e.preventDefault();
   const form=e.target;
-  const response=await fetch(form.action,{
-    method:'POST',
-    body:new FormData(form),
-    headers:{'Accept':'application/json'}
-  });
-  if(response.ok){
-    document.getElementById('contactSuccess').style.display='block';
-    form.reset();
-  } else { alert('Oops! There was a problem.'); }
+  const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+  if(response.ok){document.getElementById('contactSuccess').style.display='block'; form.reset();} 
+  else { alert('Oops! There was a problem.'); }
 });
 
 // Suggestion Form
 document.getElementById('suggestionForm').addEventListener('submit', async e=>{
   e.preventDefault();
   const form=e.target;
-  const response=await fetch(form.action,{
-    method:'POST',
-    body:new FormData(form),
-    headers:{'Accept':'application/json'}
-  });
-  if(response.ok){
-    document.getElementById('suggestionSuccess').style.display='block';
-    form.reset();
-  } else { alert('Oops! There was a problem.'); }
+  const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+  if(response.ok){document.getElementById('suggestionSuccess').style.display='block'; form.reset();} 
+  else { alert('Oops! There was a problem.'); }
 });
 
-// Consent Banner and load AdSense after acceptance
+// Consent Banner + AdSense load
 function acceptConsent(){
   document.getElementById('consentBanner').style.display='none';
-  document.getElementById('adsenseContainer').style.display='block';
+  loadAdsense();
+}
+
+// Load AdSense dynamically
+function loadAdsense(){
+  const adScript=document.createElement('script');
+  adScript.async=true;
+  adScript.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987";
+  adScript.crossOrigin="anonymous";
+  document.body.appendChild(adScript);
+
+  const adIns=document.createElement('ins');
+  adIns.className='adsbygoogle';
+  adIns.style.display='block';
+  adIns.setAttribute('data-ad-client','ca-pub-9702899463803987');
+  adIns.setAttribute('data-ad-slot','5453842544');
+  adIns.setAttribute('data-ad-format','auto');
+  adIns.setAttribute('data-full-width-responsive','true');
+  document.getElementById('homeAdContainer').appendChild(adIns);
+
+  (adsbygoogle = window.adsbygoogle || []).push({});
 }
 </script>
-
 </body>
 </html>
