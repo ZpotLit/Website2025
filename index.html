@@ -1,163 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ZPOTHUB News | Live Updates</title>
-<link rel="icon" href="/images/logo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ZPOTHUB News | Live Updates</title>
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LH706MV0CD');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f4f4f4;color:#222;overflow-x:hidden;}
+    body.dark-mode{background:#121212;color:#e0e0e0;}
+    body.dark-mode header,body.dark-mode nav{background:#1e1e1e;color:#00ff99;}
+    body.dark-mode .news-card{background:#1e1e1e;color:#e0e0e0;}
+    body.dark-mode .news-card a{background:#00ff99;color:#000;}
 
-<!-- Google Tag & Auto Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-LH706MV0CD');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
+    header{background:#009933;padding:1rem;display:flex;justify-content:center;align-items:center;position:sticky;top:0;width:100%;z-index:2000;flex-direction:column;}
+    header h1{font-size:2rem;color:#fff;text-align:center;}
+    header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f4f4;color:#222;overflow-x:hidden;}
-header{background:#009933;color:#fff;text-align:center;padding:1.2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;width:100%;z-index:2000;}
-header h1{font-size:1.6rem;}
-nav{display:flex;justify-content:center;flex-wrap:wrap;background:#009933;}
-nav a{padding:0.8rem 1rem;text-decoration:none;color:#fff;font-weight:600;transition:0.3s;}
-nav a:hover,nav a.active{color:#00ff99;border-bottom:3px solid #00ff99;}
-.news-section{display:none;padding:1rem;}
-.news-section.active{display:block;}
-.news-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;}
-.news-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
-.news-card img{width:100%;height:180px;object-fit:cover;}
-.news-card-content{padding:0.8rem;}
-.news-card h3{font-size:1rem;margin-bottom:0.4rem;color:#111;}
-.news-meta{font-size:0.8rem;color:#555;margin-bottom:0.4rem;}
-.news-card p{font-size:0.85rem;margin-bottom:0.5rem;}
-.news-card a{display:inline-block;margin-top:0.5rem;background:#009933;color:#fff;padding:0.4rem 0.7rem;border-radius:6px;text-decoration:none;}
-#lastUpdated{text-align:center;font-size:0.8rem;color:#666;margin:1rem 0;}
-footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
-.about-column{background:linear-gradient(135deg,#009933,#00cc66);color:#fff;padding:2rem;border-radius:12px;max-width:900px;margin:2rem auto;font-size:1rem;line-height:1.6;}
-.contact-column{background:#fff;padding:2rem;border-radius:12px;max-width:600px;margin:2rem auto;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
-.privacy-column{background:linear-gradient(135deg,#ff6600,#ffcc00);color:#fff;padding:2rem;border-radius:12px;max-width:900px;margin:2rem auto;font-size:1rem;line-height:1.6;}
-.terms-column{background:linear-gradient(135deg,#0066ff,#66ccff);color:#fff;padding:2rem;border-radius:12px;max-width:900px;margin:2rem auto;font-size:1rem;line-height:1.6;}
-</style>
+    #breakingNews{background:#fff;color:#000;padding:0.5rem 1rem;font-weight:600;overflow:hidden;white-space:nowrap;position:relative;}
+    #breakingNews span{display:inline-block;padding-right:2rem;white-space:nowrap;}
+
+    #hamburgerMenu{position:absolute;right:1rem;top:1rem;display:flex;flex-direction:column;cursor:pointer;}
+    #hamburgerMenu span{height:3px;width:25px;background:#fff;margin:4px 0;border-radius:2px;transition:0.4s;}
+
+    #sideMenu{position:fixed;top:0;right:-300px;width:300px;height:100%;background:#009933;color:#fff;transition:0.3s;padding:1rem;z-index:3000;display:flex;flex-direction:column;overflow-y:auto;}
+    #sideMenu.show{right:0;}
+    #sideMenu a{color:#fff;text-decoration:none;margin:0.5rem 0;font-weight:600;font-size:1rem;}
+    #sideMenu h2{margin-top:1rem;margin-bottom:0.5rem;font-size:1.1rem;}
+    #sideMenu .section-content{background:#fff;color:#000;padding:1rem;border-radius:10px;margin-bottom:1rem;font-size:0.95rem;line-height:1.5;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+
+    nav{display:flex;justify-content:center;flex-wrap:wrap;background:#009933;position:sticky;top:105px;z-index:1500;}
+    nav a{padding:0.8rem 1rem;text-decoration:none;color:#fff;font-weight:600;transition:0.3s;}
+    nav a:hover,nav a.active{color:#00ff99;border-bottom:3px solid #00ff99;}
+
+    .news-section{display:none;padding:1rem;background:#009933;margin-top:0;}
+    .news-section.active{display:block;}
+    .news-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-height:80vh;overflow-y:auto;}
+
+    .news-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+    .news-card img{width:100%;height:180px;object-fit:cover;}
+    .news-card-content{padding:0.8rem;}
+    .news-card h3{font-size:1rem;margin-bottom:0.4rem;color:#111;}
+    .news-meta{font-size:0.8rem;color:#555;margin-bottom:0.4rem;}
+    .news-card p{font-size:0.85rem;margin-bottom:0.5rem;max-height:11em;overflow:hidden;transition:max-height 0.3s;}
+    .news-card.expanded p{max-height:100em;}
+    .news-card a{display:inline-block;margin-top:0.5rem;background:#009933;color:#fff;padding:0.4rem 0.7rem;border-radius:6px;text-decoration:none;}
+    .expandBtn{background:#00cc66;color:#fff;border:none;padding:0.3rem 0.6rem;border-radius:5px;cursor:pointer;margin-top:0.5rem;font-size:0.85rem;}
+
+    #lastUpdated{text-align:center;font-size:0.8rem;color:#666;margin:1rem 0;}
+    footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
+
+    .about-column,.contact-column,.privacy-column,.terms-column{background:#fff;color:#000;padding:1.5rem;border-radius:10px;margin-bottom:1rem;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+    .contact-column{max-width:100%;}
+
+    .tv-container{background:#000;color:#fff;border-radius:10px;overflow:hidden;max-width:100%;height:500px;display:flex;justify-content:center;align-items:center;transition:all 0.3s;}
+    .tv-container iframe{width:100%;height:100%;border:none;}
+
+    /* Landscape fullscreen */
+    body.landscape-mode .tv-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border-radius:0;
+      z-index:9999;
+    }
+    body.landscape-mode header,
+    body.landscape-mode nav,
+    body.landscape-mode #breakingNews,
+    body.landscape-mode .news-section:not(.active),
+    body.landscape-mode footer,
+    body.landscape-mode #sideMenu {
+      display:none !important;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<h1>ZPOTHUB News</h1>
-<div>
-<a href="#" id="darkModeToggle" style="background:#fff;color:#009933;padding:0.4rem 0.7rem;border-radius:8px;text-decoration:none;">🌙</a>
-<a href="#" id="refreshBtn" style="background:#fff;color:#009933;padding:0.4rem 0.7rem;border-radius:8px;text-decoration:none;">⟳</a>
-</div>
-</header>
+  <header>
+    <h1>ZPOTHUB News</h1>
+    <div class="slogan">THE SMART NEWS NETWORK</div>
+    <div id="hamburgerMenu"><span></span><span></span><span></span></div>
+  </header>
 
-<nav>
-<a href="#global" class="active" data-section="global">Global</a>
-<a href="#africa" data-section="africa">Africa</a>
-<a href="#nigeria" data-section="nigeria">Nigeria</a>
-<a href="#sports" data-section="sports">Sports</a>
-<a href="#about" data-section="about">About</a>
-<a href="#contact" data-section="contact">Contact</a>
-<a href="#privacy" data-section="privacy">Privacy</a>
-<a href="#terms" data-section="terms">Policy</a>
-</nav>
+  <div id="breakingNews">
+    <span id="breakingNewsContent">Loading breaking news...</span>
+  </div>
 
-<section id="global" class="news-section active"><div class="news-container" id="global-news"></div></section>
-<section id="africa" class="news-section"><div class="news-container" id="africa-news"></div></section>
-<section id="nigeria" class="news-section"><div class="news-container" id="nigeria-news"></div></section>
-<section id="sports" class="news-section"><div class="news-container" id="sports-news"></div></section>
+  <div id="sideMenu">
+    <a href="#global" id="menuHome">Home</a>
+    <h2>About</h2>
+    <div class="section-content about-column">
+      <p>ZPOTHUB News delivers verified, real-time updates from all major categories with detailed reporting, enriched with images and rich descriptions for better engagement.</p>
+    </div>
+    <h2>Contact</h2>
+    <div class="section-content contact-column">
+      <form action="https://formspree.io/f/xdkpllon" method="POST">
+        <label>Name:</label><input type="text" name="name" required style="width:100%;padding:0.7rem;margin-bottom:0.8rem;">
+        <label>Email:</label><input type="email" name="email" required style="width:100%;padding:0.7rem;margin-bottom:0.8rem;">
+        <label>Message:</label><textarea name="message" rows="5" required style="width:100%;padding:0.7rem;margin-bottom:0.8rem;"></textarea>
+        <button type="submit" style="background:#009933;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:6px;cursor:pointer;">Send Message</button>
+      </form>
+    </div>
+    <h2>Privacy</h2>
+    <div class="section-content privacy-column">
+      <p>We prioritize your privacy. We use cookies, including Google Ads and Google Analytics cookies, to improve user experience, content delivery, and ad optimization. By using ZPOTHUB News, you consent to our use of cookies. We do not sell personal data.</p>
+    </div>
+    <h2>Policy</h2>
+    <div class="section-content terms-column">
+      <p>By using ZPOTHUB News, you agree to our terms and policies. Content is for informational purposes only and is regularly updated.</p>
+    </div>
+  </div>
 
-<section id="about" class="news-section">
-<div class="about-column">
-<h2>About ZPOTHUB News</h2>
-<p>ZPOTHUB News delivers verified, real-time updates from all major categories with clear, detailed reporting.</p>
-<p>Every article is enriched with images and a rich descriptions for better engagement.</p>
-</div>
-</section>
+  <nav>
+    <a href="#global" class="active" data-section="global">Global</a>
+    <a href="#africa" data-section="africa">Africa</a>
+    <a href="#nigeria" data-section="nigeria">Nigeria</a>
+    <a href="#sports" data-section="sports">Sports</a>
+    <a href="#tv" data-section="tv">Al Jazeera</a>
+    <a href="#silverbird" data-section="silverbird">Silverbird TV</a>
+  </nav>
 
-<section id="contact" class="news-section">
-<div class="contact-column">
-<h2>Contact Us</h2>
-<form action="https://formspree.io/f/xdkpllon" method="POST">
-<label>Name:</label><input type="text" name="name" required style="width:100%;padding:0.7rem;margin-bottom:1rem;">
-<label>Email:</label><input type="email" name="email" required style="width:100%;padding:0.7rem;margin-bottom:1rem;">
-<label>Message:</label><textarea name="message" rows="5" required style="width:100%;padding:0.7rem;margin-bottom:1rem;"></textarea>
-<button type="submit" style="background:#009933;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:6px;cursor:pointer;">Send Message</button>
-</form>
-</div>
-</section>
+  <section id="global" class="news-section active">
+    <div class="news-container" id="global-news"></div>
+  </section>
+  <section id="africa" class="news-section">
+    <div class="news-container" id="africa-news"></div>
+  </section>
+  <section id="nigeria" class="news-section">
+    <div class="news-container" id="nigeria-news"></div>
+  </section>
+  <section id="sports" class="news-section">
+    <div class="news-container" id="sports-news"></div>
+  </section>
 
-<section id="privacy" class="news-section">
-<div class="privacy-column">
-<h2>Privacy Policy</h2>
-<p>Your data is safe. Cookies and Google Ads are used for optimization and analytics only.</p>
-</div>
-</section>
+  <section id="tv" class="news-section">
+    <div class="tv-container">
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=UCNye-wNBqNL5ZzHSJj3l8Bg" allowfullscreen allow="autoplay; encrypted-media" title="Al Jazeera Live"></iframe>
+    </div>
+  </section>
 
-<section id="terms" class="news-section">
-<div class="terms-column">
-<h2>Terms & Policy</h2>
-<p>By using ZPOTHUB News, you agree to our terms and policies. Content is for informational purposes only.</p>
-</div>
-</section>
+  <section id="silverbird" class="news-section">
+    <div class="tv-container">
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=UC0bTlGrpIUxteb59mnxBpEw" allowfullscreen allow="autoplay; encrypted-media" title="Silverbird TV Live"></iframe>
+    </div>
+  </section>
 
-<p id="lastUpdated">Last updated: just now</p>
-<footer>
-<p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p>
-</footer>
+  <p id="lastUpdated">Last updated: just now</p>
+  <footer><p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p></footer>
 
-<script>
-const darkToggle=document.getElementById('darkModeToggle');
-darkToggle.onclick=()=>{document.body.classList.toggle('dark-mode');darkToggle.textContent=document.body.classList.contains('dark-mode')?'☀️':'🌙';};
+  <script>
+    // Hamburger toggle
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const sideMenu = document.getElementById('sideMenu');
+    hamburgerMenu.onclick = () => sideMenu.classList.toggle('show');
 
-document.querySelectorAll('nav a[data-section]').forEach(link=>{
-link.addEventListener('click',e=>{
-e.preventDefault();
-document.querySelectorAll('nav a[data-section]').forEach(a=>a.classList.remove('active'));
-link.classList.add('active');
-document.querySelectorAll('.news-section').forEach(sec=>sec.classList.remove('active'));
-document.getElementById(link.dataset.section).classList.add('active');
-window.scrollTo(0,0);
-});
-});
+    // Section navigation
+    document.querySelectorAll('nav a[data-section]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('nav a[data-section]').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+        document.querySelectorAll('.news-section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(link.dataset.section).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
 
-async function fetchRSS(url){try{const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);const data=await res.json();return data.items||[];}catch(e){return [];}}
+    document.getElementById('menuHome').onclick = e => {
+      e.preventDefault();
+      document.querySelectorAll('.news-section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById('global').classList.add('active');
+      document.querySelectorAll('nav a[data-section]').forEach(a => a.classList.remove('active'));
+      document.querySelector('nav a[data-section="global"]').classList.add('active');
+      sideMenu.classList.remove('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
-function generateDescription(content){
-if(!content) content='Stay informed with this news update.';
-let para=content.split('. ').filter(t=>t.trim());
-while(para.length<5) para.push(''); // Fill empty paragraphs if content is short
-return para.slice(0,5).map(p=>p?`<p>${p}.</p>`:'<p></p>').join('');
-}
+    // RSS fetch & render functions
+    async function fetchRSS(url){
+      try {
+        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+        const data = await res.json();
+        return data.items || [];
+      } catch { return []; }
+    }
 
-function renderNews(container,articles){
-if(!articles.length){container.innerHTML="No articles";return;}
-let cards=[];
-for(let i=0;i<30;i++){
-let a=articles[i%articles.length]; // Repeat articles if fewer than 30
-const img=a.enclosure?.link||a.thumbnail||a.urlToImage?`<img src="${a.enclosure?.link||a.thumbnail||a.urlToImage}" alt="News Image">`:'<img src="https://via.placeholder.com/400x200?text=No+Image" alt="No Image">';
-cards.push(`<div class="news-card">${img}<div class="news-card-content"><h3>${a.title}</h3><p class="news-meta">${a.pubDate||a.isoDate||a.publishedAt||''}</p>${generateDescription(a.content||a.description||a.contentSnippet)}<a href="${a.link||a.url}" target="_blank">See More</a></div></div>`);
-}
-container.innerHTML=cards.join('');
-}
+    function generateDescriptionMulti(content){
+      if(!content) content='Stay informed.';
+      const text=content.replace(/(<([^>]+)>)/gi,"").trim();
+      const sentences=text.split('. ').filter(s=>s.trim());
+      let paraCount=Math.min(Math.max(2,sentences.length>3?3:sentences.length),3);
+      let paras=sentences.slice(0,paraCount).map(p=>`<p>${p}.</p>`);
+      while(paras.length<2) paras.push('<p></p>');
+      return paras.join('');
+    }
 
-async function loadSection(section,feeds){
-const container=document.getElementById(section+'-news');let all=[];
-for(const f of feeds) all=all.concat(await fetchRSS(f));
-renderNews(container,all);
-}
+    function renderNews(container,articles){
+      if(!articles.length){container.innerHTML="Content is loading…"; return ["Loading content…"];}
+      let cards=[];
+      for(let a of articles){
+        const img=a.enclosure?.link || a.thumbnail || a.urlToImage;
+        cards.push(`
+          <div class="news-card">
+            <img src="${img || 'https://via.placeholder.com/400x200?text=No+Image'}" alt="News Image" loading="lazy">
+            <div class="news-card-content">
+              <h3>${a.title}</h3>
+              <p class="news-meta">${a.pubDate || a.isoDate || ''}</p>
+              ${generateDescriptionMulti(a.content || a.description || a.contentSnippet)}
+              <a href="${a.link || a.url}" target="_blank">See More</a>
+              <button class="expandBtn">Expand</button>
+            </div>
+          </div>`);
+      }
+      container.innerHTML=cards.join('');
+      container.querySelectorAll('.expandBtn').forEach(btn=>{
+        btn.onclick=()=>{const card=btn.closest('.news-card');card.classList.toggle('expanded');btn.textContent=card.classList.contains('expanded')?'Collapse':'Expand';};
+      });
+      return articles.map(a=>a.title);
+    }
 
-async function refreshAll(){
-await loadSection('global',['https://rss.cnn.com/rss/edition.rss','https://feeds.bbci.co.uk/news/world/rss.xml']);
-await loadSection('africa',['https://www.africanews.com/feed/','https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf']);
-await loadSection('nigeria',['https://punchng.com/feed/','https://www.vanguardngr.com/feed/','https://thenationonlineng.net/feed/','https://tribuneonlineng.com/feed/','https://dailypost.ng/feed/']);
-await loadSection('sports',['https://feeds.bbci.co.uk/sport/rss.xml','https://www.espn.com/espn/rss/nba/news']);
-document.getElementById('lastUpdated').textContent="Last updated: "+new Date().toLocaleTimeString();
-}
+    const sectionFeeds={
+      global:['https://rss.cnn.com/rss/edition.rss','https://feeds.bbci.co.uk/news/world/rss.xml','https://www.aljazeera.com/xml/rss/all.xml'],
+      africa:['https://www.africanews.com/feed/','https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf'],
+      nigeria:['https://punchng.com/feed/','https://www.vanguardngr.com/feed/','https://thenationonlineng.net/feed/'],
+      sports:['https://feeds.bbci.co.uk/sport/rss.xml','https://www.espn.com/espn/rss/nba/news']
+    };
+    let sectionNews={};
 
-refreshAll();
-setInterval(refreshAll,300000);
-</script>
+    async function loadSection(section,feeds){
+      let all=[];
+      for(const f of feeds) all=all.concat(await fetchRSS(f));
+      let unique=all.filter((v,i,a)=>a.findIndex(t=>t.title===v.title)===i);
+      sectionNews[section]=renderNews(document.getElementById(section+'-news'),unique.slice(0,40));
+    }
+
+    async function refreshAll(){
+      document.getElementById('lastUpdated').textContent="Refreshing...";
+      for(const sec in sectionFeeds) await loadSection(sec,sectionFeeds[sec]);
+      document.getElementById('lastUpdated').textContent="Last updated: "+new Date().toLocaleTimeString();
+    }
+
+    refreshAll();
+
+    const breakingNewsSpan=document.getElementById('breakingNewsContent');
+    let breakingIndex=0;
+    let scrollPos=0;
+
+    function scrollTicker(){
+      const activeSection=document.querySelector('.news-section.active').id;
+      const newsList=sectionNews[activeSection]||["Loading content…"];
+      breakingNewsSpan.textContent=newsList[breakingIndex];
+      scrollPos-=0.5;
+      if(scrollPos<-breakingNewsSpan.offsetWidth) scrollPos=breakingNewsSpan.parentElement.offsetWidth;
+      breakingNewsSpan.style.transform=`translateX(${scrollPos}px)`;
+      requestAnimationFrame(scrollTicker);
+    }
+    requestAnimationFrame(scrollTicker);
+    setInterval(()=>{
+      const activeSection=document.querySelector('.news-section.active').id;
+      const newsList=sectionNews[activeSection]||["Loading content…"];
+      breakingIndex=(breakingIndex+1)%newsList.length;
+      scrollPos=breakingNewsSpan.parentElement.offsetWidth;
+    },5000);
+
+    // Landscape detection
+    function checkOrientation(){
+      if(window.innerWidth>window.innerHeight){
+        document.body.classList.add('landscape-mode');
+      } else {
+        document.body.classList.remove('landscape-mode');
+      }
+    }
+    window.addEventListener('resize', checkOrientation);
+    window.addEventListener('load', checkOrientation);
+  </script>
 </body>
 </html>
