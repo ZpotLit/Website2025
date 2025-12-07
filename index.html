@@ -64,7 +64,176 @@ body.landscape-mode header,body.landscape-mode nav,body.landscape-mode #breaking
 <div class="slogan">THE SMART NEWS NETWORK</div>
 <div id="hamburgerMenu"><span></span><span></span><span></span></div>
 </header>
+<!-- ========================= -->
+<!--   MANUAL NEWS SECTION     -->
+<!-- ========================= -->
 
+<style>
+  /* Horizontal Scroll Area */
+  .manual-news-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
+
+  /* Each Card */
+  .manual-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 260px;
+    margin-right: 12px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    white-space: normal;
+  }
+
+  .manual-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #111;
+  }
+
+  .manual-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+  }
+</style>
+
+<!-- ========================= -->
+<!--   MANUAL NEWS SECTION     -->
+<!-- ========================= -->
+<section id="manual-news-section">
+  <h2 style="padding-left:10px; font-size:1.8rem; color:#009933;">📰 Knowledge Hub</h2>
+  <p style="padding-left:10px; color:#555; max-width:800px; margin-bottom:10px;">
+    Explore curated, educational articles designed to enhance your skills, mindset, and personal growth. Click "Expand" to read more.
+  </p>
+  <div class="manual-news-wrapper" id="manual-news-wrapper"></div>
+</section>
+
+<style>
+.manual-news-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 15px;
+}
+
+.manual-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 340px;
+  margin-right: 18px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  white-space: normal;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.manual-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+.manual-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #007a29;
+}
+
+.manual-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #333;
+  max-height: 6em;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+
+.manual-card.expanded p {
+  max-height: 100em;
+}
+
+.expandBtn {
+  display: inline-block;
+  background: #009933;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+}
+
+.expandBtn:hover {
+  background: #007a29;
+}
+</style>
+
+<script>
+(function() {
+  const articles = [
+    {
+      headline: "💪 The Importance of Consistency in Personal Growth",
+      body: "Consistency is the cornerstone of meaningful progress. Small, daily actions such as reading, learning a skill, or practicing self-discipline compound over time. Unlike sporadic effort, consistent routines build momentum, strengthen focus, and cultivate long-term personal and professional development."
+    },
+    {
+      headline: "🧠 Mastering Decision-Making Skills",
+      body: "Effective decision-making is a critical skill for success. Evaluate options carefully, anticipate consequences, and prioritize choices aligned with your goals. Thoughtful decisions minimize mistakes, create opportunities, and help navigate challenges with confidence."
+    },
+    {
+      headline: "🔥 Staying Motivated During Challenges",
+      body: "Motivation can fluctuate, but resilience sustains progress. During tough times, maintain clarity of purpose, set realistic short-term goals, and surround yourself with positive influences. Remember that challenges are temporary, and perseverance strengthens character and skills."
+    },
+    {
+      headline: "💰 Financial Literacy and Discipline",
+      body: "Financial freedom begins with discipline, not income. Track expenses, create budgets, save regularly, and invest in knowledge or skills. Avoid impulsive spending and high-interest debt. Practicing financial responsibility today ensures long-term stability and independence."
+    },
+    {
+      headline: "🎯 Continuous Skill Development",
+      body: "In a fast-evolving world, skills are your competitive edge. Dedicate time to learn new digital, analytical, or interpersonal skills. Continuous improvement enhances problem-solving abilities, broadens career opportunities, and supports personal growth."
+    },
+    {
+      headline: "🤝 Building Healthy Relationships",
+      body: "Strong relationships are built on trust, communication, and empathy. Listen actively, express yourself clearly, and respect boundaries. Positive relationships provide emotional support, collaboration opportunities, and improve overall well-being."
+    },
+    {
+      headline: "🏋️ The Power of Self-Discipline Over Motivation",
+      body: "Motivation is temporary, but self-discipline lasts. Build routines, honor commitments, and maintain focus even when enthusiasm wanes. Discipline is the foundation for consistent achievement and long-term success."
+    },
+    {
+      headline: "🧘 Stress Management and Mental Well-being",
+      body: "Stress is inevitable, but managing it effectively enhances productivity and health. Practice mindfulness, organize tasks, prioritize rest, and maintain perspective. Developing coping strategies ensures resilience and promotes a balanced lifestyle."
+    }
+  ];
+
+  const wrapper = document.getElementById('manual-news-wrapper');
+
+  articles.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'manual-card';
+    card.innerHTML = `
+      <h3>${a.headline}</h3>
+      <p>${a.body}</p>
+      <button class="expandBtn">Expand</button>
+    `;
+    wrapper.appendChild(card);
+
+    const btn = card.querySelector('.expandBtn');
+    btn.onclick = () => {
+      card.classList.toggle('expanded');
+      btn.textContent = card.classList.contains('expanded') ? 'Collapse' : 'Expand';
+    };
+  });
+})();
+</script>
+  </div>
+</section>
 <div id="breakingNews">
 <span id="breakingNewsContent">Loading breaking news…</span>
 </div>
