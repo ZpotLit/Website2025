@@ -1,0 +1,6 @@
+# ZPOTHUB News Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://website2025-omega.vercel.app/sitemap.xml
