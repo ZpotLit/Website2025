@@ -238,23 +238,12 @@ body.landscape-mode header,body.landscape-mode nav,body.landscape-mode #breaking
 <span id="breakingNewsContent">Loading breaking news…</span>
 </div>
 
-<div id="sideMenu">
-<a href="#global" id="menuHome">Home</a>
-<h2>About</h2>
-<div class="section-content about-column"><p>ZPOTHUB News delivers verified, real-time updates from all major categories with detailed reporting, enriched with images and rich descriptions for better engagement.</p></div>
-<h2>Contact</h2>
-<div class="section-content contact-column">
-<form action="https://formspree.io/f/xdkpllon" method="POST">
-<label>Name:</label><input type="text" name="name" required style="width:100%;padding:0.7rem;margin-bottom:0.8rem;">
-<label>Email:</label><input type="email" name="email" required style="width:100%;padding:0.7rem;margin-bottom:0.8rem;">
-<label>Message:</label><textarea name="message" rows="5" required style="width:100%;padding:0.7rem;margin-bottom:0.8rem;"></textarea>
-<button type="submit" style="background:#009933;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:6px;cursor:pointer;">Send Message</button>
+
+
+
+
+<button="submit"="background:#009933;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:6px;cursor:pointer;"></button>
 </form>
-</div>
-<h2>Privacy & Cookies</h2>
-<div class="section-content privacy-column"><p>We respect your privacy. Cookies, including Google cookies, are used for analytics and ad personalization. We do not sell personal data.</p></div>
-<h2>Policy</h2>
-<div class="section-content terms-column"><p>By using ZPOTHUB News, you agree to our terms and policies. Content is for informational purposes only and is regularly updated.</p></div>
 </div>
 
 <nav>
@@ -264,6 +253,21 @@ body.landscape-mode header,body.landscape-mode nav,body.landscape-mode #breaking
 <a href="#sports" data-section="sports">Sports</a>
 <a href="#tv" data-section="tv">Al Jazeera</a>
 <a href="#silverbird" data-section="silverbird">Silverbird TV</a>
+<!-- Add this inside your main nav -->
+<nav>
+  <!-- existing links -->
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy & Policy</a>
+</nav>
+
+<!-- Optional: add in sideMenu if you have a hamburger/slide menu -->
+<div id="sideMenu">
+  <a href="index.html" id="menuHome">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy & Policy</a>
+</div>
 </nav>
 
 <section id="global" class="news-section active"><div class="news-container" id="global-news"></div></section>

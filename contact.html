@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | ZPOTHUB News</title>
+<link rel="icon" href="/images/logo.png" type="image/png">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LH706MV0CD');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f4f4;color:#222;overflow-x:hidden;}
+header{background:#009933;padding:1rem;display:flex;justify-content:center;align-items:center;position:sticky;top:0;width:100%;z-index:2000;flex-direction:column;}
+header h1{font-size:2rem;color:#fff;text-align:center;}
+header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
+#hamburgerMenu{position:absolute;right:1rem;top:1rem;display:flex;flex-direction:column;cursor:pointer;}
+#hamburgerMenu span{height:3px;width:25px;background:#fff;margin:4px 0;border-radius:2px;transition:0.4s;}
+#sideMenu{position:fixed;top:0;right:-300px;width:300px;height:100%;background:#009933;color:#fff;transition:0.3s;padding:1rem;z-index:3000;display:flex;flex-direction:column;overflow-y:auto;}
+#sideMenu.show{right:0;}
+#sideMenu a{color:#fff;text-decoration:none;margin:0.5rem 0;font-weight:600;font-size:1rem;}
+#sideMenu h2{margin-top:1rem;margin-bottom:0.5rem;font-size:1.1rem;}
+#sideMenu .section-content{background:#fff;color:#000;padding:1rem;border-radius:10px;margin-bottom:1rem;font-size:0.95rem;line-height:1.5;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+nav{display:flex;justify-content:center;flex-wrap:wrap;background:#009933;position:sticky;top:105px;z-index:1500;}
+nav a{padding:0.8rem 1rem;text-decoration:none;color:#fff;font-weight:600;transition:0.3s;}
+nav a:hover,nav a.active{color:#00ff99;border-bottom:3px solid #00ff99;}
+section{padding:1rem;}
+.contact-content{max-width:700px;margin:2rem auto;background:#fff;padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.contact-content h2{color:#007a29;margin-bottom:1rem;}
+.contact-content label{display:block;margin-bottom:0.3rem;font-weight:600;}
+.contact-content input, .contact-content textarea{width:100%;padding:0.7rem;margin-bottom:1rem;border-radius:6px;border:1px solid #ccc;}
+.contact-content button{background:#009933;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:6px;cursor:pointer;font-weight:600;}
+.contact-content button:hover{background:#007a29;}
+footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ZPOTHUB News</h1>
+<div class="slogan">THE SMART NEWS NETWORK</div>
+<div id="hamburgerMenu"><span></span><span></span><span></span></div>
+</header>
+
+<div id="sideMenu">
+<a href="index.html" id="menuHome">Home</a>
+<h2>About</h2>
+<div class="section-content about-column">
+<p><a href="about.html" style="color:#fff;text-decoration:underline;">About Us</a></p>
+</div>
+<h2>Privacy & Cookies</h2>
+<div class="section-content privacy-column">
+<p><a href="privacy.html" style="color:#fff;text-decoration:underline;">Privacy Policy</a></p>
+</div>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="privacy.html">Privacy</a>
+</nav>
+
+<section class="contact-content">
+<h2>Contact ZPOTHUB News</h2>
+<form action="https://formspree.io/f/xdkpllon" method="POST">
+<label>Name:</label>
+<input type="text" name="name" required>
+<label>Email:</label>
+<input type="email" name="email" required>
+<label>Message:</label>
+<textarea name="message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<footer><p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p></footer>
+
+<script>
+// Hamburger toggle
+const hamburgerMenu=document.getElementById('hamburgerMenu');
+const sideMenu=document.getElementById('sideMenu');
+hamburgerMenu.onclick = () => sideMenu.classList.toggle('show');
+
+// Home link
+document.getElementById('menuHome').onclick = e => {
+    e.preventDefault();
+    window.location.href = 'index.html';
+};
+</script>
+
+</body>
+</html>
