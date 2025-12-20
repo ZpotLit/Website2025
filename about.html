@@ -9,10 +9,10 @@
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
 <script>
-window.dataLayer=window.dataLayer||[];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-LH706MV0CD');
+gtag('js', new Date());
+gtag('config', 'G-LH706MV0CD');
 </script>
 
 <!-- Google AdSense -->
@@ -22,10 +22,16 @@ gtag('config','G-LH706MV0CD');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#f4f4f4;color:#222;overflow-x:hidden;}
 body.dark-mode{background:#121212;color:#e0e0e0;}
-body.dark-mode header,body.dark-mode nav{background:#1e1e1e;color:#00ff99;}
-header{background:#009933;padding:1rem;display:flex;justify-content:center;align-items:center;position:sticky;top:0;width:100%;z-index:2000;flex-direction:column;}
+header{background:#009933;padding:1rem;display:flex;justify-content:center;align-items:center;flex-direction:column;position:sticky;top:0;width:100%;z-index:2000;}
 header h1{font-size:2rem;color:#fff;text-align:center;}
 header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
+#hamburgerMenu{position:absolute;right:1rem;top:1rem;display:flex;flex-direction:column;cursor:pointer;}
+#hamburgerMenu span{height:3px;width:25px;background:#fff;margin:4px 0;border-radius:2px;transition:0.4s;}
+#sideMenu{position:fixed;top:0;right:-300px;width:300px;height:100%;background:#009933;color:#fff;transition:0.3s;padding:1rem;z-index:3000;display:flex;flex-direction:column;overflow-y:auto;}
+#sideMenu.show{right:0;}
+#sideMenu a{color:#fff;text-decoration:none;margin:0.5rem 0;font-weight:600;font-size:1rem;}
+#sideMenu h2{margin-top:1rem;margin-bottom:0.5rem;font-size:1.1rem;}
+#sideMenu .section-content{background:#fff;color:#000;padding:1rem;border-radius:10px;margin-bottom:1rem;font-size:0.95rem;line-height:1.5;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
 nav{display:flex;justify-content:center;flex-wrap:wrap;background:#009933;position:sticky;top:105px;z-index:1500;}
 nav a{padding:0.8rem 1rem;text-decoration:none;color:#fff;font-weight:600;transition:0.3s;}
 nav a:hover,nav a.active{color:#00ff99;border-bottom:3px solid #00ff99;}
@@ -34,30 +40,94 @@ section{padding:1rem;}
 .about-content h2{color:#007a29;margin-bottom:1rem;}
 .about-content p{margin-bottom:1rem;}
 footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
+
+/* COOKIE BANNER */
+#cookieBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #009933;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#cookieBanner button {
+  background: #fff;
+  color: #009933;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
 </style>
 </head>
 <body>
 
 <header>
-<h1>ZPOTHUB News</h1>
-<div class="slogan">THE SMART NEWS NETWORK</div>
+  <h1>ZPOTHUB News</h1>
+  <div class="slogan">The Smart News Network</div>
+  <div id="hamburgerMenu"><span></span><span></span><span></span></div>
 </header>
 
-<!-- Navigation bar -->
+<div id="sideMenu">
+  <a href="index.html" id="menuHome">Home</a>
+  <h2>About</h2>
+  <div class="section-content about-column">
+    <p>ZPOTHUB News delivers verified, real-time updates from all major categories with detailed reporting, enriched with images and rich descriptions for better engagement.</p>
+  </div>
+  <h2>Contact</h2>
+  <div class="section-content contact-column">
+    <a href="contact.html" style="color:#009933;text-decoration:underline;">Go to Contact Page</a>
+  </div>
+  <h2>Privacy & Cookies</h2>
+  <div class="section-content privacy-column">
+    <a href="privacy.html" style="color:#009933;text-decoration:underline;">View Privacy Policy</a>
+  </div>
+</div>
+
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html" class="active">About</a>
-<a href="contact.html">Contact</a>
+  <a href="index.html">Homepage</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy & Policy</a>
 </nav>
 
 <section class="about-content">
-<h2>About ZPOTHUB News</h2>
-<p>ZPOTHUB News is the premier source for verified, real-time news covering global events, Africa, Nigeria, sports, and entertainment. We aim to provide accurate and insightful information to keep our readers informed and empowered.</p>
-<p>Our team of journalists and editors ensures every story is fact-checked, enriched with images and detailed descriptions, delivering news that matters in an engaging format.</p>
-<p>At ZPOTHUB News, we believe in transparency, accountability, and quality journalism. Our mission is to create a smart news network that informs, educates, and inspires.</p>
+  <h2>About ZPOTHUB News</h2>
+  <p>ZPOTHUB News is the premier source for verified, real-time news covering global events, Africa, Nigeria, sports, and entertainment. We aim to provide accurate and insightful information to keep our readers informed and empowered.</p>
+  <p>Our team of journalists and editors ensures every story is fact-checked, enriched with images and detailed descriptions, delivering news that matters in an engaging format.</p>
+  <p>At ZPOTHUB News, we believe in transparency, accountability, and quality journalism. Our mission is to create a smart news network that informs, educates, and inspires.</p>
 </section>
 
-<footer><p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p></footer>
+<footer>
+  <p>©2025 ZPOTHUB News — About</p>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner">
+  <span>We use cookies to improve your experience and analyze traffic. By continuing, you agree to our use of cookies.</span>
+</div>
+
+<script>
+// Hamburger toggle
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const sideMenu = document.getElementById('sideMenu');
+hamburgerMenu.onclick = () => sideMenu.classList.toggle('show');
+
+// Menu Home navigation
+document.getElementById('menuHome').onclick = e => {
+  e.preventDefault();
+  window.location.href = 'index.html';
+};
+
+
+</script>
 
 </body>
 </html>

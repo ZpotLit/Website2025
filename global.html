@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ZPOTHUB News | Global News</title>
+<link rel="icon" href="/images/logo.png" type="image/png">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-LH706MV0CD');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f4f4;color:#222;overflow-x:hidden;}
+header{background:#009933;padding:1rem;text-align:center;color:#fff;position:sticky;top:0;z-index:2000;}
+header h1{font-size:2rem;}
+header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
+nav{display:flex;justify-content:center;flex-wrap:wrap;background:#009933;position:sticky;top:105px;z-index:1500;padding:0.5rem;}
+nav a{padding:0.8rem 1rem;text-decoration:none;color:#fff;font-weight:600;transition:0.3s;}
+nav a:hover,nav a.active{color:#00ff99;border-bottom:3px solid #00ff99;}
+.news-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;padding:1rem;max-height:90vh;overflow-y:auto;}
+.news-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.news-card img{width:100%;height:180px;object-fit:cover;}
+.news-card-content{padding:0.8rem;}
+.news-card h3{font-size:1rem;margin-bottom:0.4rem;color:#111;}
+.news-meta{font-size:0.8rem;color:#555;margin-bottom:0.4rem;}
+.news-card p{font-size:0.85rem;margin-bottom:0.5rem;max-height:6em;overflow:hidden;transition:max-height 0.3s;}
+.news-card.expanded p{max-height:100em;}
+.news-card a{display:inline-block;margin-top:0.5rem;background:#009933;color:#fff;padding:0.4rem 0.7rem;border-radius:6px;text-decoration:none;}
+.expandBtn{background:#00cc66;color:#fff;border:none;padding:0.3rem 0.6rem;border-radius:5px;cursor:pointer;margin-top:0.5rem;font-size:0.85rem;}
+.expandBtn:hover{background:#007a29;}
+#lastUpdated{text-align:center;font-size:0.8rem;color:#666;margin:1rem 0;}
+footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ZPOTHUB News</h1>
+<div class="slogan">The Smart News Network</div>
+</header>
+
+<nav>
+<a href="index.html">Homepage</a>
+<a href="africa.html">Africa</a>
+<a href="nigeria.html">Nigeria</a>
+<a href="sports.html">Sports</a>
+</nav>
+
+<section class="news-container" id="global-news"></section>
+
+<p id="lastUpdated">Last updated: just now</p>
+
+<footer>
+<p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p>
+</footer>
+
+<script>
+// RSS fetch function
+async function fetchRSS(url){
+  try{
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+    const data = await res.json();
+    return data.items || [];
+  }catch(e){return [];}
+}
+
+// Generate professional description
+function generateDescription(content){
+  if(!content) return "Read the full article for more information.";
+  const text = content.replace(/(<([^>]+)>)/gi,"").trim();
+  let sentences = text.split('. ').filter(s=>s.trim());
+  let paraCount = Math.min(Math.max(2, sentences.length>3?3:sentences.length),3);
+  let paras = sentences.slice(0,paraCount).map(p=>`<p>${p}.</p>`);
+  while(paras.length<2) paras.push('<p></p>');
+  return paras.join('');
+}
+
+// Render news cards
+function renderNews(container, articles){
+  if(!articles.length){
+    container.innerHTML = "<p>Loading content…</p>";
+    return [];
+  }
+  let cards = [];
+  for(let a of articles.slice(0,30)){ // Show first 30 items
+    const img = a.enclosure?.link || a.thumbnail || a.urlToImage || 'https://via.placeholder.com/400x200?text=No+Image';
+    cards.push(`
+      <div class="news-card">
+        <img src="${img}" alt="News Image" loading="lazy">
+        <div class="news-card-content">
+          <h3>${a.title}</h3>
+          <p class="news-meta">${a.pubDate||a.isoDate||''}</p>
+          ${generateDescription(a.content || a.description || a.contentSnippet)}
+          <a href="${a.link||a.url}" target="_blank">See More</a>
+          <button class="expandBtn">Expand</button>
+        </div>
+      </div>
+    `);
+  }
+  container.innerHTML = cards.join('');
+  container.querySelectorAll('.expandBtn').forEach(btn=>{
+    btn.onclick=()=>{
+      const card=btn.closest('.news-card');
+      card.classList.toggle('expanded');
+      btn.textContent = card.classList.contains('expanded') ? 'Collapse' : 'Expand';
+    };
+  });
+  return articles.map(a=>a.title);
+}
+
+// Global news RSS feeds
+const feeds = [
+  'https://rss.cnn.com/rss/edition.rss',
+  'https://feeds.bbci.co.uk/news/world/rss.xml',
+  'https://www.aljazeera.com/xml/rss/all.xml'
+];
+
+async function loadGlobalNews(){
+  let all=[];
+  for(const f of feeds){
+    const items = await fetchRSS(f);
+    all = all.concat(items);
+  }
+  // Remove duplicates by title
+  let unique = all.filter((v,i,a)=>a.findIndex(t=>t.title===v.title)===i);
+  renderNews(document.getElementById('global-news'), unique);
+  document.getElementById('lastUpdated').textContent = "Last updated: "+new Date().toLocaleTimeString();
+}
+
+// Load on page load
+loadGlobalNews();
+</script>
+
+</body>
+</html>
