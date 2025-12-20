@@ -5,330 +5,70 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ZPOTHUB News | Live Updates</title>
 <link rel="icon" href="/images/logo.png" type="image/png">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LH706MV0CD');</script>
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-9702899463803987">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f4f4;color:#222;overflow-x:hidden;}
-body.dark-mode{background:#121212;color:#e0e0e0;}
-body.dark-mode header,body.dark-mode nav{background:#1e1e1e;color:#00ff99;}
-body.dark-mode .news-card{background:#1e1e1e;color:#e0e0e0;}
-body.dark-mode .news-card a{background:#00ff99;color:#000;}
-header{background:#009933;padding:1rem;display:flex;justify-content:center;align-items:center;position:sticky;top:0;width:100%;z-index:2000;flex-direction:column;}
-header h1{font-size:2rem;color:#fff;text-align:center;}
-header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
-#breakingNews{background:#fff;color:#000;padding:0.5rem 1rem;font-weight:600;overflow:hidden;white-space:nowrap;position:relative;}
-#breakingNews span{display:inline-block;padding-right:2rem;white-space:nowrap;transform:translateX(100%);}
-#hamburgerMenu{position:absolute;right:1rem;top:1rem;display:flex;flex-direction:column;cursor:pointer;}
-#hamburgerMenu span{height:3px;width:25px;background:#fff;margin:4px 0;border-radius:2px;transition:0.4s;}
-#sideMenu{position:fixed;top:0;right:-300px;width:300px;height:100%;background:#009933;color:#fff;transition:0.3s;padding:1rem;z-index:3000;display:flex;flex-direction:column;overflow-y:auto;}
-#sideMenu.show{right:0;}
-#sideMenu a{color:#fff;text-decoration:none;margin:0.5rem 0;font-weight:600;font-size:1rem;}
-#sideMenu h2{margin-top:1rem;margin-bottom:0.5rem;font-size:1.1rem;}
-#sideMenu .section-content{background:#fff;color:#000;padding:1rem;border-radius:10px;margin-bottom:1rem;font-size:0.95rem;line-height:1.5;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
-nav{display:flex;justify-content:center;flex-wrap:wrap;background:#009933;position:sticky;top:105px;z-index:1500;}
-nav a{padding:0.8rem 1rem;text-decoration:none;color:#fff;font-weight:600;transition:0.3s;}
-nav a:hover,nav a.active{color:#00ff99;border-bottom:3px solid #00ff99;}
-.news-section{display:none;padding:1rem;background:#009933;margin-top:0;}
-.news-section.active{display:block;}
-.news-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-height:80vh;overflow-y:auto;}
-.news-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
-.news-card img{width:100%;height:180px;object-fit:cover;}
-.news-card-content{padding:0.8rem;}
-.news-card h3{font-size:1rem;margin-bottom:0.4rem;color:#111;}
-.news-meta{font-size:0.8rem;color:#555;margin-bottom:0.4rem;}
-.news-card p{font-size:0.85rem;margin-bottom:0.5rem;max-height:11em;overflow:hidden;transition:max-height 0.3s;}
-.news-card.expanded p{max-height:100em;}
-.news-card a{display:inline-block;margin-top:0.5rem;background:#009933;color:#fff;padding:0.4rem 0.7rem;border-radius:6px;text-decoration:none;}
-.expandBtn{background:#00cc66;color:#fff;border:none;padding:0.3rem 0.6rem;border-radius:5px;cursor:pointer;margin-top:0.5rem;font-size:0.85rem;}
-#lastUpdated{text-align:center;font-size:0.8rem;color:#666;margin:1rem 0;}
-footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
-.about-column,.contact-column,.privacy-column,.terms-column{background:#fff;color:#000;padding:1.5rem;border-radius:10px;margin-bottom:1rem;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
-.contact-column{max-width:100%;}
-.tv-container{background:#000;color:#fff;border-radius:10px;overflow:hidden;max-width:100%;height:500px;display:flex;justify-content:center;align-items:center;transition:all 0.3s;}
-.tv-container iframe{width:100%;height:100%;border:none;}
-body.landscape-mode .tv-container{position:fixed;top:0;left:0;width:100vw;height:100vh;border-radius:0;z-index:9999;}
-body.landscape-mode header,body.landscape-mode nav,body.landscape-mode #breakingNews,body.landscape-mode .news-section:not(.active),body.landscape-mode footer,body.landscape-mode #sideMenu{display:none!important;}
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body {background:#f4f4f4; color:#222; display:flex; flex-direction:column; min-height:100vh; overflow:hidden;}
+header {background:#009933; padding:1rem; text-align:center; color:#fff; position:sticky; top:0; z-index:2000;}
+header h1 {font-size:2rem; font-weight:900;}
+header .slogan {background:#fff; color:#009933; padding:0.3rem 0.8rem; border-radius:8px; margin-top:0.5rem; font-size:0.9rem;}
+
+nav {display:flex; justify-content:center; flex-wrap:wrap; background:#009933; position:sticky; top:105px; z-index:1500;}
+nav a {padding:0.8rem 1rem; text-decoration:none; color:#fff; font-weight:600; transition:0.3s;}
+nav a:hover, nav a.active {color:#00ff99; border-bottom:3px solid #00ff99;}
+
+main {flex:1; position:relative; display:flex; justify-content:center; align-items:center; text-align:center; overflow:hidden;}
+
+/* Watermark */
+.watermark {position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; z-index:0; pointer-events:none; user-select:none;}
+.watermark h1, .watermark h2 {font-weight:900; color:rgba(0,0,0,0.08); white-space:nowrap;}
+.watermark h1 {font-size:8rem; margin-bottom:0.5rem;}
+.watermark h2 {font-size:5rem;}
+
+/* Content above watermark */
+.content-wrapper {position:relative; z-index:1; padding:2rem; max-width:700px;}
+.content-wrapper h2 {font-size:2rem; color:#009933; margin-bottom:1rem;}
+.content-wrapper p {font-size:1rem; color:#333; line-height:1.6; margin-bottom:0.8rem;}
+
+footer {background:#007a29; color:#fff; text-align:center; padding:1rem; margin-top:auto;}
 </style>
 </head>
 <body>
 
 <header>
-<h1>ZPOTHUB News</h1>
-<div class="slogan">THE SMART NEWS NETWORK</div>
-<div id="hamburgerMenu"><span></span><span></span><span></span></div>
+  <h1>ZPOTHUB News</h1>
+  <div class="slogan">The Smart News Network</div>
 </header>
-<!-- ========================= -->
-<!--   MANUAL NEWS SECTION     -->
-<!-- ========================= -->
 
-<style>
-  /* Horizontal Scroll Area */
-  .manual-news-wrapper {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px;
-  }
+<nav>
+  <a href="index.html" class="active">Homepage</a>
+  <a href="knowledgehub.html">Knowledge Hub</a>
+  <a href="global.html">Global</a>
+  <a href="africa.html">Africa</a>
+  <a href="nigeria.html">Nigeria</a>
+  <a href="sports.html">Sports</a>
+  <a href="tv-shows.html">TV Shows</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy & Policy</a>
+</nav>
 
-  /* Each Card */
-  .manual-card {
-    display: inline-block;
-    vertical-align: top;
-    width: 260px;
-    margin-right: 12px;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.15);
-    white-space: normal;
-  }
-
-  .manual-card h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #111;
-  }
-
-  .manual-card p {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #444;
-  }
-</style>
-
-<!-- ========================= -->
-<!--   MANUAL NEWS SECTION     -->
-<!-- ========================= -->
-<section id="manual-news-section">
-  <h2 style="padding-left:10px; font-size:1.8rem; color:#009933;">📰 Knowledge Hub</h2>
-  <p style="padding-left:10px; color:#555; max-width:800px; margin-bottom:10px;">
-    Explore curated, educational articles designed to enhance your skills, mindset, and personal growth. Click "Expand" to read more.
-  </p>
-  <div class="manual-news-wrapper" id="manual-news-wrapper"></div>
-</section>
-
-<style>
-.manual-news-wrapper {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 15px;
-}
-
-.manual-card {
-  display: inline-block;
-  vertical-align: top;
-  width: 340px;
-  margin-right: 18px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-  white-space: normal;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.manual-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-}
-
-.manual-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: #007a29;
-}
-
-.manual-card p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #333;
-  max-height: 6em;
-  overflow: hidden;
-  transition: max-height 0.3s;
-}
-
-.manual-card.expanded p {
-  max-height: 100em;
-}
-
-.expandBtn {
-  display: inline-block;
-  background: #009933;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 0.9rem;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 12px;
-  font-size: 0.85rem;
-  transition: background 0.3s;
-}
-
-.expandBtn:hover {
-  background: #007a29;
-}
-</style>
-
-<script>
-(function() {
-  const articles = [
-    {
-      headline: "💪 The Importance of Consistency in Personal Growth",
-      body: "Consistency is the cornerstone of meaningful progress. Small, daily actions such as reading, learning a skill, or practicing self-discipline compound over time. Unlike sporadic effort, consistent routines build momentum, strengthen focus, and cultivate long-term personal and professional development."
-    },
-    {
-      headline: "🧠 Mastering Decision-Making Skills",
-      body: "Effective decision-making is a critical skill for success. Evaluate options carefully, anticipate consequences, and prioritize choices aligned with your goals. Thoughtful decisions minimize mistakes, create opportunities, and help navigate challenges with confidence."
-    },
-    {
-      headline: "🔥 Staying Motivated During Challenges",
-      body: "Motivation can fluctuate, but resilience sustains progress. During tough times, maintain clarity of purpose, set realistic short-term goals, and surround yourself with positive influences. Remember that challenges are temporary, and perseverance strengthens character and skills."
-    },
-    {
-      headline: "💰 Financial Literacy and Discipline",
-      body: "Financial freedom begins with discipline, not income. Track expenses, create budgets, save regularly, and invest in knowledge or skills. Avoid impulsive spending and high-interest debt. Practicing financial responsibility today ensures long-term stability and independence."
-    },
-    {
-      headline: "🎯 Continuous Skill Development",
-      body: "In a fast-evolving world, skills are your competitive edge. Dedicate time to learn new digital, analytical, or interpersonal skills. Continuous improvement enhances problem-solving abilities, broadens career opportunities, and supports personal growth."
-    },
-    {
-      headline: "🤝 Building Healthy Relationships",
-      body: "Strong relationships are built on trust, communication, and empathy. Listen actively, express yourself clearly, and respect boundaries. Positive relationships provide emotional support, collaboration opportunities, and improve overall well-being."
-    },
-    {
-      headline: "🏋️ The Power of Self-Discipline Over Motivation",
-      body: "Motivation is temporary, but self-discipline lasts. Build routines, honor commitments, and maintain focus even when enthusiasm wanes. Discipline is the foundation for consistent achievement and long-term success."
-    },
-    {
-      headline: "🧘 Stress Management and Mental Well-being",
-      body: "Stress is inevitable, but managing it effectively enhances productivity and health. Practice mindfulness, organize tasks, prioritize rest, and maintain perspective. Developing coping strategies ensures resilience and promotes a balanced lifestyle."
-    }
-  ];
-
-  const wrapper = document.getElementById('manual-news-wrapper');
-
-  articles.forEach(a => {
-    const card = document.createElement('div');
-    card.className = 'manual-card';
-    card.innerHTML = `
-      <h3>${a.headline}</h3>
-      <p>${a.body}</p>
-      <button class="expandBtn">Expand</button>
-    `;
-    wrapper.appendChild(card);
-
-    const btn = card.querySelector('.expandBtn');
-    btn.onclick = () => {
-      card.classList.toggle('expanded');
-      btn.textContent = card.classList.contains('expanded') ? 'Collapse' : 'Expand';
-    };
-  });
-})();
-</script>
+<main>
+  <div class="watermark">
+    <h1>ZPOTHUB</h1>
+    <h2>NEWS</h2>
   </div>
-</section>
-<div id="breakingNews">
-<span id="breakingNewsContent">Loading breaking news…</span>
-</div>
-</div>
 
-<nav>
-<a href="#global" class="active" data-section="global">Global</a>
-<a href="#africa" data-section="africa">Africa</a>
-<a href="#nigeria" data-section="nigeria">Nigeria</a>
-<a href="#sports" data-section="sports">Sports</a>
-<a href="aljazeera.html">Al Jazeera</a>
-<a href="silverbird.html">Silverbird TV</a>
-<a href="nta.html">NTA TV</a>
-<a href="arise.html">Arise News</a>
-<a href="mountziontv.html">Mount Zion TV</a>
-<a href="channels-tv.html">Channels TV</a>
-<a href="irokotv.html">iROKOtv Movies</a>
-<!-- Add this inside your main nav -->
-<nav>
-  <!-- existing links -->
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy & Policy</a>
-</nav>
+  <div class="content-wrapper">
+    <h2>Welcome to ZPOTHUB News</h2>
+    <p>Your trusted source for concise and accurate news updates globally and locally.</p>
+    <p>Explore Global, Africa, Nigeria, Sports sections and Broadcast Network independently, all maintained to international standards.</p>
+    <p>Navigate through the menu to stay informed with reliable, real-time reporting.</p>
+  </div>
+</main>
 
-<!-- Optional: add in sideMenu if you have a hamburger/slide menu -->
-<div id="sideMenu">
-  <a href="index.html" id="menuHome">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy & Policy</a>
-</div>
-</nav>
-
-<section id="global" class="news-section active"><div class="news-container" id="global-news"></div></section>
-<section id="africa" class="news-section"><div class="news-container" id="africa-news"></div></section>
-<section id="nigeria" class="news-section"><div class="news-container" id="nigeria-news"></div></section>
-<section id="sports" class="news-section"><div class="news-container" id="sports-news"></div></section>
-
-<p id="lastUpdated">Last updated: just now</p>
-<footer><p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p></footer>
-
-<script>
-// Hamburger toggle
-const hamburgerMenu=document.getElementById('hamburgerMenu');
-const sideMenu=document.getElementById('sideMenu');
-hamburgerMenu.onclick=()=>sideMenu.classList.toggle('show');
-
-// Section navigation
-document.querySelectorAll('nav a[data-section]').forEach(link=>{
-link.addEventListener('click',e=>{
-e.preventDefault();
-document.querySelectorAll('nav a[data-section]').forEach(a=>a.classList.remove('active'));
-link.classList.add('active');
-document.querySelectorAll('.news-section').forEach(sec=>sec.classList.remove('active'));
-document.getElementById(link.dataset.section).classList.add('active');
-window.scrollTo({top:0,behavior:'smooth'});
-});
-});
-document.getElementById('menuHome').onclick=e=>{
-e.preventDefault();
-document.querySelectorAll('.news-section').forEach(sec=>sec.classList.remove('active'));
-document.getElementById('global').classList.add('active');
-document.querySelectorAll('nav a[data-section]').forEach(a=>a.classList.remove('active'));
-document.querySelector('nav a[data-section="global"]').classList.add('active');
-sideMenu.classList.remove('show');
-window.scrollTo({top:0,behavior:'smooth'});
-};
-
-// RSS fetch & render
-async function fetchRSS(url){try{const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);const data=await res.json();return data.items||[]}catch{return[];}}
-function generateDescriptionMulti(content){if(!content) content='Stay informed.';const text=content.replace(/(<([^>]+)>)/gi,"").trim();const sentences=text.split('. ').filter(s=>s.trim());let paraCount=Math.min(Math.max(2,sentences.length>3?3:sentences.length),3);let paras=sentences.slice(0,paraCount).map(p=>`<p>${p}.</p>`);while(paras.length<2) paras.push('<p></p>');return paras.join('');}
-function renderNews(container,articles){if(!articles.length){container.innerHTML="Content is loading…";return["Loading content…"];}let cards=[];for(let a of articles){const img=a.enclosure?.link||a.thumbnail||a.urlToImage;cards.push(`<div class="news-card"><img src="${img||'https://via.placeholder.com/400x200?text=No+Image'}" alt="News Image" loading="lazy"><div class="news-card-content"><h3>${a.title}</h3><p class="news-meta">${a.pubDate||a.isoDate||''}</p>${generateDescriptionMulti(a.content||a.description||a.contentSnippet)}<a href="${a.link||a.url}" target="_blank">See More</a><button class="expandBtn">Expand</button></div></div>`);}container.innerHTML=cards.join('');container.querySelectorAll('.expandBtn').forEach(btn=>{btn.onclick=()=>{const card=btn.closest('.news-card');card.classList.toggle('expanded');btn.textContent=card.classList.contains('expanded')?'Collapse':'Expand';};});return articles.map(a=>a.title);}
-
-const sectionFeeds={global:['https://rss.cnn.com/rss/edition.rss','https://feeds.bbci.co.uk/news/world/rss.xml','https://www.aljazeera.com/xml/rss/all.xml'],africa:['https://www.africanews.com/feed/','https://allafrica.com/tools/headlines/rdf/latest/headlines.rdf'],nigeria:['https://punchng.com/feed/','https://www.vanguardngr.com/feed/','https://thenationonlineng.net/feed/'],sports:['https://feeds.bbci.co.uk/sport/rss.xml','https://www.espn.com/espn/rss/nba/news']};
-let sectionNews={};
-async function loadSection(section,feeds){let all=[];for(const f of feeds) all=all.concat(await fetchRSS(f));let unique=all.filter((v,i,a)=>a.findIndex(t=>t.title===v.title)===i);sectionNews[section]=renderNews(document.getElementById(section+'-news'),unique.slice(0,40));}
-async function refreshAll(){document.getElementById('lastUpdated').textContent="Refreshing...";for(const sec in sectionFeeds) await loadSection(sec,sectionFeeds[sec]);document.getElementById('lastUpdated').textContent="Last updated: "+new Date().toLocaleTimeString();}
-refreshAll();
-
-// Fixed Breaking news ticker
-const breakingNewsSpan=document.getElementById('breakingNewsContent');
-let breakingIndex=0;
-let scrollPos=breakingNewsSpan.parentElement.offsetWidth;
-let textWidth=0;
-function updateTickerText(){const activeSection=document.querySelector('.news-section.active').id;const newsList=sectionNews[activeSection]||["Loading content…"];breakingNewsSpan.textContent=newsList[breakingIndex];textWidth=breakingNewsSpan.offsetWidth;scrollPos=breakingNewsSpan.parentElement.offsetWidth;}
-function scrollTicker(){scrollPos-=1;if(scrollPos<-textWidth){breakingIndex=(breakingIndex+1)%(sectionNews[document.querySelector('.news-section.active').id]?.length||1);updateTickerText();}breakingNewsSpan.style.transform=`translateX(${scrollPos}px)`;requestAnimationFrame(scrollTicker);}
-updateTickerText();
-requestAnimationFrame(scrollTicker);
-
-// Orientation check
-function checkOrientation(){if(window.innerWidth>window.innerHeight){document.body.classList.add('landscape-mode');}else{document.body.classList.remove('landscape-mode');}}
-window.addEventListener('resize',checkOrientation);
-window.addEventListener('load',checkOrientation);
-</script>
+<footer>
+  <p>©2025ZPOTHUB News — The Smart Way to Stay Informed</p>
+</footer>
 
 </body>
 </html>

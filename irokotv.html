@@ -2,68 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ZPOTHUB News | iROKOtv Movies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZPOTHUB News | Iroko TV</title>
 <link rel="icon" href="/images/logo.png" type="image/png">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
-<script>
-window.dataLayer = window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config','G-LH706MV0CD');
-</script>
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f4f4;color:#222;overflow-x:hidden;}
-header{background:#009933;padding:1rem;text-align:center;color:#fff;position:sticky;top:0;z-index:2000;}
-header h1{font-size:2rem;}
-header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
-nav{display:flex;justify-content:center;gap:1rem;background:#009933;position:sticky;top:105px;z-index:1500;padding:0.7rem;}
-nav a{color:#fff;text-decoration:none;font-weight:600;}
+body{background:#f4f4f4;color:#222;display:flex;flex-direction:column;min-height:100vh;}
+header{background:#009933;color:#fff;text-align:center;padding:1rem;position:sticky;top:0;z-index:1000;}
+header h1{font-size:2rem;font-weight:700;}
+header .slogan{margin-top:.4rem;font-size:.9rem;background:#fff;color:#009933;display:inline-block;padding:.3rem .8rem;border-radius:8px;}
+nav{background:#009933;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:#fff;text-decoration:none;padding:.8rem 1rem;font-weight:600;}
 nav a:hover{color:#00ff99;}
-.video-section{width:100%;max-width:1000px;margin:2rem auto;padding:1rem;text-align:center;}
-.video-section iframe{width:100%;height:60vh;border:none;border-radius:10px;}
-.footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
+main{flex:1;position:relative;padding:2rem;max-width:900px;margin:auto;text-align:center;}
+main::before{content:"ZPOTHUB NEWS";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:6rem;font-weight:900;color:rgba(0,0,0,0.06);pointer-events:none;user-select:none;z-index:0;}
+.content{position:relative;z-index:1;}
+.section-title{font-size:1.6rem;color:#007a29;margin-bottom:.6rem;}
+.section-text{font-size:0.95rem;line-height:1.7;color:#333;margin-bottom:1.2rem;text-align:left;}
+.watch-btn{display:inline-block;background:#009933;color:#fff;font-weight:600;padding:.8rem 1.2rem;border-radius:8px;text-decoration:none;margin-top:1rem;transition:0.3s;}
+.watch-btn:hover{background:#00ff99;color:#000;}
+.disclaimer{font-size:0.85rem;color:#555;background:#fff;padding:1rem;border-radius:10px;margin-top:1.5rem;text-align:left;}
+footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:auto;}
+@media(max-width:768px){main::before{font-size:3rem;}}
 </style>
 </head>
 <body>
-
 <header>
   <h1>ZPOTHUB News</h1>
-  <div class="slogan">Nollywood Movies by iROKOtv</div>
+  <div class="slogan">THE SMART NEWS NETWORK</div>
 </header>
-
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy & Policy</a>
+  <a href="index.html">Homepage</a>
+  <a href="tv-shows.html">TV Shows</a>
 </nav>
+<main>
+  <div class="content">
+    <h2 class="section-title">Iroko TV</h2>
+    <p class="section-text">
+      Iroko TV is one of Africa's largest online entertainment platforms, specializing in Nollywood movies, TV series, and exclusive African content. It provides subscribers with a vast library of films, original productions, and curated entertainment for audiences worldwide.
+    </p>
+    <p class="section-text">
+      While Iroko TV does not offer a direct live stream for embedding, you can access the full catalog and watch shows through the official Iroko TV site.
+    </p>
+    <a href="https://www.irokotv.com/" target="_blank" class="watch-btn">Watch Iroko TV</a>
 
-<section class="video-section">
-  <h2>Streaming iROKOtv Movie Playlist</h2>
-
-  <!-- Embed iROKOtv Nollywood playlist -->
-  <iframe
-    src="https://www.youtube.com/embed?listType=playlist&list=PL5er9OqrtO_rlYUTssgZ7BdvcyCxjGIuB"
-    allow="autoplay; encrypted-media; fullscreen"
-    title="iROKOtv Movies Playlist">
-  </iframe>
-
-  <p style="margin-top:1rem;color:#555;">
-    Browse and watch movies from iROKOtv’s official Nollywood playlist.
-  </p>
-</section>
-
-<footer class="footer">
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> ZPOTHUB News does not own or operate Iroko TV. This link directs to the official Iroko TV website. All rights and content ownership remain with Iroko TV.
+    </div>
+  </div>
+</main>
+<footer>
   <p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p>
 </footer>
-
 </body>
 </html>

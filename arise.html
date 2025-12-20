@@ -2,88 +2,89 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ZPOTHUB News | Arise News Live</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZPOTHUB News | Arise TV</title>
 <link rel="icon" href="/images/logo.png" type="image/png">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){ dataLayer.push(arguments); }
-gtag('js', new Date());
-gtag('config', 'G-LH706MV0CD');
-</script>
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f4f4;color:#222;overflow-x:hidden;}
-header{background:#009933;padding:1rem;text-align:center;color:#fff;position:sticky;top:0;z-index:2000;}
-header h1{font-size:2rem;}
-header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body{background:#f4f4f4;color:#222;min-height:100vh;display:flex;flex-direction:column;}
+header{background:#009933;color:#fff;text-align:center;padding:1rem;position:sticky;top:0;z-index:1000;}
+header h1{font-size:2rem;font-weight:900;}
+header .slogan{margin-top:0.4rem;font-size:0.9rem;background:#fff;color:#009933;display:inline-block;padding:0.3rem 0.8rem;border-radius:8px;}
 
-nav{display:flex;justify-content:center;gap:1rem;background:#009933;position:sticky;top:105px;z-index:1500;padding:0.5rem;}
-nav a{color:#fff;text-decoration:none;font-weight:600;}
-nav a:hover{color:#00ff99;}
+nav{background:#009933;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:#fff;text-decoration:none;padding:.8rem 1rem;font-weight:600;}
+nav a:hover,nav a.active{color:#00ff99;}
 
-.tv-container{width:100%;max-width:1200px;margin:2rem auto;padding:1rem;display:flex;align-items:center;flex-direction:column;}
-.tv-container h2{margin-bottom:1rem;color:#009933;font-size:1.8rem;}
-
-.live-frame{
-  width:100%;
-  height:70vh;
-  border:none;
-  border-radius:10px;
-  background:#000;
+main{flex:1;position:relative;padding:2rem 1rem;max-width:1200px;margin:auto;}
+main::before{
+  content:"ZPOTHUB NEWS";position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:6rem;font-weight:900;color:rgba(0,0,0,0.06);
+  pointer-events:none;user-select:none;text-align:center;z-index:0;
 }
 
-.fallback-note{margin-top:1rem;color:#555;text-align:center;font-size:1rem;}
-.live-btn{display:inline-block;margin-top:1rem;padding:0.7rem 1.5rem;background:#009933;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:0.3s;}
-.live-btn:hover{background:#007a29;}
+.content{position:relative;z-index:1;}
+.section-title{font-size:1.8rem;color:#007a29;margin-bottom:.6rem;}
+.section-text{font-size:1rem;line-height:1.7;color:#333;margin-bottom:1.2rem;}
 
-footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
+.tv-frame{width:100%;height:520px;border-radius:12px;overflow:hidden;background:#000;margin:1.5rem 0;}
+.tv-frame iframe{width:100%;height:100%;border:none;}
+
+.watch-link{display:inline-block;margin-top:1rem;padding:.6rem 1.2rem;background:#009933;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;transition:0.3s;}
+.watch-link:hover{background:#00ff99;color:#009933;}
+
+.disclaimer{font-size:.85rem;color:#555;background:#fff;padding:1rem;border-radius:10px;margin-top:1rem;}
+
+footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:auto;}
+
+@media(max-width:768px){
+  main::before{font-size:3.8rem;}
+  .tv-frame{height:300px;}
+}
 </style>
 </head>
 <body>
 
 <header>
-<h1>ZPOTHUB News</h1>
-<div class="slogan">THE SMART NEWS NETWORK</div>
+  <h1>ZPOTHUB News</h1>
+  <div class="slogan">THE SMART NEWS NETWORK</div>
 </header>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="silverbird.html">Silverbird TV</a>
-<a href="nta.html">NTA TV</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy & Policy</a>
+  <a href="index.html">Homepage</a>
+  <a href="tv-shows.html">TV Shows</a>
 </nav>
 
-<section class="tv-container">
-  <h2>Arise News Live</h2>
+<main>
+  <div class="content">
+    <h2 class="section-title">Arise TV</h2>
+    <p class="section-text">
+      Arise News is a 24‑hour international news channel reporting on major global developments with a strong focus on Africa. The channel broadcasts from studios in London, New York, Johannesburg, Lagos, and Abuja and delivers live coverage of breaking news, politics, business, and culture to audiences worldwide. 3
+    </p>
+    <p class="section-text">
+      Known for its in‑depth journalism and global perspective, Arise TV combines live reporting with expert analysis to keep viewers informed on the most pressing issues of our time. 4
+    </p>
 
-  <!-- Arise News YouTube Live embed -->
-  <iframe
-    class="live-frame"
-    src="https://www.youtube.com/embed/live_stream?channel=UCyEJX-kSj0kOOCS7Qlq2G7g&autoplay=1"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
+    <div class="tv-frame">
+      <iframe 
+        src="https://www.youtube.com/embed/live_stream?channel=UCyEJX-kSj0kOOCS7Qlq2G7g"
+        title="Arise News Live Stream"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-  <p class="fallback-note">
-    If the live stream above does not play, Arise News might have embedding restrictions. You can still watch it on YouTube.
-  </p>
-  <a href="https://www.youtube.com/@AriseNews/live" target="_blank" class="live-btn">
-    Watch Arise News Live on YouTube
-  </a>
-</section>
+    <a href="arise.html" class="watch-link">Watch Live on YouTube</a>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> ZPOTHUB News does not own, control or operate Arise TV. The embedded live stream is provided from publicly accessible official sources for informational and editorial purposes only. All broadcast rights and content ownership remain with Arise TV and its licensors.  
+    </div>
+  </div>
+</main>
 
 <footer>
-<p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p>
+  <p>© 2025 ZPOTHUB News — Arise TV</p>
 </footer>
 
 </body>

@@ -1,64 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ZPOTHUB News | Mount Zion TV Live</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZPOTHUB News | Mount Zion TV</title>
 <link rel="icon" href="/images/logo.png" type="image/png">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-LH706MV0CD');
-</script>
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f4f4;color:#222;overflow-x:hidden;}
-header{background:#009933;color:#fff;padding:1rem;text-align:center;position:sticky;top:0;z-index:2000;font-size:2rem;}
-nav{display:flex;justify-content:center;gap:1rem;background:#009933;padding:0.6rem;}
-nav a{color:#fff;text-decoration:none;font-weight:600;}
-nav a:hover{color:#00ff99;}
-.tv-container{max-width:1200px;margin:2rem auto;padding:1rem;text-align:center;}
-.live-frame{width:100%;height:70vh;border:none;border-radius:10px;background:#000;}
-.notice{margin-top:1.2rem;color:#555;font-size:1rem;}
-footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
-</style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body {background:#f4f4f4; color:#222; min-height:100vh; display:flex; flex-direction:column;}
 
+header {background:#009933; color:#fff; text-align:center; padding:1rem; position:sticky; top:0; z-index:1000;}
+header h1 {font-size:2rem; font-weight:700;}
+header .slogan {margin-top:.4rem; font-size:.9rem; background:#fff; color:#009933; display:inline-block; padding:.3rem .8rem; border-radius:8px;}
+
+nav {background:#009933; display:flex; justify-content:center; flex-wrap:wrap;}
+nav a {color:#fff; text-decoration:none; padding:.8rem 1rem; font-weight:600;}
+nav a:hover {color:#00ff99;}
+
+main {flex:1; position:relative; padding:2rem 1.2rem; max-width:1200px; margin:auto; text-align:center;}
+
+/* Watermark */
+main::before {
+  content:"ZPOTHUB NEWS";
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%) rotate(-25deg);
+  font-size:6rem; font-weight:900; color:rgba(0,0,0,0.06);
+  pointer-events:none; user-select:none;
+}
+
+.content {position:relative; z-index:1;}
+.section-title {font-size:1.8rem; color:#007a29; margin-bottom:0.8rem;}
+.section-text {font-size:1rem; line-height:1.7; color:#333; margin-bottom:1.2rem;}
+
+.tv-frame {width:100%; height:520px; border:none; border-radius:12px; margin:1.5rem 0;}
+.watch-btn {display:inline-block; padding:.8rem 1.5rem; background:#009933; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; transition:0.3s;}
+.watch-btn:hover {background:#007a29;}
+
+.disclaimer {font-size:.85rem; color:#555; background:#fff; padding:1rem; border-radius:10px; margin-top:1.5rem;}
+
+footer {background:#007a29; color:#fff; text-align:center; padding:1.2rem; margin-top:auto;}
+</style>
 </head>
 <body>
 
-<header>Mount Zion TV Live Movies</header>
+<header>
+  <h1>ZPOTHUB News</h1>
+  <div class="slogan">THE SMART NEWS NETWORK</div>
+</header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy & Policy</a>
+  <a href="index.html">Homepage</a>
+  <a href="tv-shows.html">TV Shows</a>
 </nav>
 
-<section class="tv-container">
-  <h2>24/7 Movies Stream – Mount Zion Television</h2>
+<main>
+  <div class="content">
+    <h2 class="section-title">Mount Zion Television (MZTV)</h2>
+    <p class="section-text">
+      Mount Zion Television (MZTV) is a Christian entertainment and gospel channel associated with Mount Zion Faith Ministries, founded by noted actor‑producer Damilola Mike‑Bamiloye and focused on uplifting content, faith dramas, inspirational messages, and gospel movies. The channel has grown in popularity throughout Nigeria and beyond, delivering 24/7 spiritual and entertainment programming.1
+    </p>
+    <p class="section-text">
+      While MZTV broadcasts on satellite networks like DSTV and GoTV, it also maintains an active presence on YouTube with live and continuous streaming content produced by its ministry.2
+    </p>
 
-  <!-- Embed Mount Zion Television 24/7 stream -->
-  <iframe class="live-frame"
-    src="https://www.youtube.com/embed/mqdql4SlkCo?autoplay=1"
-    allowfullscreen
-    allow="autoplay; encrypted-media">
-  </iframe>
+    <!-- Attempt to embed a known MZTV livestream video -->
+    <iframe class="tv-frame"
+      src="https://www.youtube.com/embed/NaHjxAEmcas?autoplay=0"
+      title="Mount Zion Television Live"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
 
-  <p class="notice">
-    If the video above shows “offline” or “unavailable,” the channel may not be streaming live at the moment — refresh the page or check back soon.
-  </p>
-</section>
+    <a class="watch-btn" href="https://www.youtube.com/watch?v=NaHjxAEmcas" target="_blank">Watch Live on YouTube</a>
 
-<footer>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</footer>
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> ZPOTHUB News does not own or operate Mount Zion Television. The embedded video and link point to publicly accessible content on official/associated channels. All rights and content ownership belong to the original broadcasters.
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p>
+</footer>
 
 </body>
 </html>

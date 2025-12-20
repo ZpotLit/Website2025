@@ -2,72 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ZPOTHUB News | Channels TV Live</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZPOTHUB News | Channels TV</title>
 <link rel="icon" href="/images/logo.png" type="image/png">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-LH706MV0CD');
-</script>
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f4f4;color:#222;overflow-x:hidden;}
-header{background:#009933;color:#fff;padding:1rem;text-align:center;position:sticky;top:0;z-index:2000;font-size:2rem;}
-nav{display:flex;justify-content:center;gap:1rem;background:#009933;padding:0.7rem;}
-nav a{color:#fff;text-decoration:none;font-weight:600;}
+body{background:#f4f4f4;color:#222;display:flex;flex-direction:column;min-height:100vh;}
+header{background:#009933;color:#fff;text-align:center;padding:1rem;position:sticky;top:0;z-index:1000;}
+header h1{font-size:2rem;font-weight:700;}
+header .slogan{margin-top:.4rem;font-size:.9rem;background:#fff;color:#009933;display:inline-block;padding:.3rem .8rem;border-radius:8px;}
+nav{background:#009933;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:#fff;text-decoration:none;padding:.8rem 1rem;font-weight:600;}
 nav a:hover{color:#00ff99;}
-.tv-container{max-width:1200px;margin:2rem auto;padding:1rem;text-align:center;}
-.live-frame{width:100%;height:70vh;border:none;border-radius:10px;background:#000;}
-.notice{margin-top:1rem;color:#555;font-size:1rem;}
-footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
+main{flex:1;position:relative;padding:2rem;max-width:900px;margin:auto;text-align:center;}
+main::before{content:"ZPOTHUB NEWS";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:6rem;font-weight:900;color:rgba(0,0,0,0.06);pointer-events:none;user-select:none;z-index:0;}
+.content{position:relative;z-index:1;}
+.section-title{font-size:1.6rem;color:#007a29;margin-bottom:.6rem;}
+.section-text{font-size:0.95rem;line-height:1.7;color:#333;margin-bottom:1.2rem;text-align:left;}
+.watch-btn{display:inline-block;background:#009933;color:#fff;font-weight:600;padding:.8rem 1.2rem;border-radius:8px;text-decoration:none;margin-top:1rem;transition:0.3s;}
+.watch-btn:hover{background:#00ff99;color:#000;}
+.disclaimer{font-size:0.85rem;color:#555;background:#fff;padding:1rem;border-radius:10px;margin-top:1.5rem;text-align:left;}
+footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:auto;}
+@media(max-width:768px){main::before{font-size:3rem;}}
 </style>
-
 </head>
 <body>
-
-<header>Channels TV Live</header>
-
+<header>
+  <h1>ZPOTHUB News</h1>
+  <div class="slogan">THE SMART NEWS NETWORK</div>
+</header>
 <nav>
-  <a href="index.html">Home</a>
-  <a href="silverbird.html">Silverbird TV</a>
-  <a href="nta.html">NTA TV</a>
-  <a href="arise.html">Arise News</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy & Policy</a>
+  <a href="index.html">Homepage</a>
+  <a href="tv-shows.html">TV Shows</a>
 </nav>
+<main>
+  <div class="content">
+    <h2 class="section-title">Channels Television</h2>
+    <p class="section-text">
+      Channels Television is one of Nigeria's leading independent news networks, offering comprehensive coverage of national and international news, politics, sports, and business updates. Known for its credibility and journalistic integrity, Channels TV continues to provide real-time reporting to millions of viewers across Nigeria and beyond.
+    </p>
+    <p class="section-text">
+      Although embedding the live stream is restricted, you can watch Channels TV directly through their official broadcast link.
+    </p>
+    <a href="https://www.channelstv.com/live/" target="_blank" class="watch-btn">Watch Channels TV Live</a>
 
-<section class="tv-container">
-  <h2>Channels Television — Live Stream</h2>
-
-  <!-- Embed the official YouTube live stream -->
-  <iframe class="live-frame"
-    src="https://www.youtube.com/embed/d4zDorDl5UE?autoplay=1"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-
-  <p class="notice">
-    This should show the live broadcast if Channels TV is currently streaming and embeddable.  
-    If it shows “Unavailable” then the channel may not be streaming live at this moment — refresh or try again later.
-  </p>
-  
-  <p class="notice">
-    You can also watch directly on their official site:
-    <a href="https://www.channelstv.com/live/" target="_blank" style="color:#009933;font-weight:600;">Channels TV Live</a>
-  </p>
-</section>
-
-<footer>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</footer>
-
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> ZPOTHUB News does not own or operate Channels Television. This link directs to the official Channels TV site. All broadcast rights and content ownership remain with Channels Television.
+    </div>
+  </div>
+</main>
+<footer>
+  <p>© 2025 ZPOTHUB News — The Smart Way to Stay Informed</p>
+</footer>
 </body>
 </html>
