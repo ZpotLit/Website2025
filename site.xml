@@ -1,62 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage -->
   <url>
-    <loc>https://www.yoursite.com/index.html</loc>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- News Sections -->
-  <url>
-    <loc>https://www.yoursite.com/global.html</loc>
-    <priority>0.8</priority>
+    <loc>https://website2025-omega.vercel.app/index.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/africa.html</loc>
-    <priority>0.8</priority>
+    <loc>https://website2025-omega.vercel.app/global.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/nigeria.html</loc>
-    <priority>0.8</priority>
+    <loc>https://website2025-omega.vercel.app/africa.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/sports.html</loc>
-    <priority>0.8</priority>
+    <loc>https://website2025-omega.vercel.app/nigeria.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/knowledgehub.html</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- TV Sections -->
-  <url>
-    <loc>https://www.yoursite.com/silverbird.html</loc>
-    <priority>0.7</priority>
+    <loc>https://website2025-omega.vercel.app/sports.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/arise.html</loc>
-    <priority>0.7</priority>
+    <loc>https://website2025-omega.vercel.app/knowledgehub.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/ntatv.html</loc>
-    <priority>0.7</priority>
+    <loc>https://website2025-omega.vercel.app/silverbird.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/mountzion.html</loc>
-    <priority>0.7</priority>
+    <loc>https://website2025-omega.vercel.app/arise.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/channelstv.html</loc>
-    <priority>0.7</priority>
+    <loc>https://website2025-omega.vercel.app/mountzion.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/iroko.html</loc>
-    <priority>0.7</priority>
+    <loc>https://website2025-omega.vercel.app/channelstv.html</loc>
   </url>
   <url>
-    <loc>https://www.yoursite.com/aljazeera.html</loc>
-    <priority>0.7</priority>
+    <loc>https://website2025-omega.vercel.app/iroko.html</loc>
   </url>
-
+  <url>
+    <loc>https://website2025-omega.vercel.app/aljazeera.html</loc>
+  </url>
 </urlset>
