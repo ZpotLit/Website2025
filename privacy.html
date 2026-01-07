@@ -1,107 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Privacy & Policy | ZPOTHUB News</title>
-<link rel="icon" href="/images/logo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZPOTHUB News | Privacy Policy</title>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH706MV0CD"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-LH706MV0CD');
-</script>
+  <link rel="icon" href="/images/logo.png" type="image/png">
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987" crossorigin="anonymous"></script>
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987"
+    crossorigin="anonymous"></script>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f4f4;color:#222;overflow-x:hidden;}
-header{background:#009933;padding:1rem;display:flex;justify-content:center;align-items:center;position:sticky;top:0;width:100%;z-index:2000;flex-direction:column;}
-header h1{font-size:2rem;color:#fff;text-align:center;}
-header .slogan{background:#fff;color:#009933;padding:0.3rem 0.8rem;border-radius:8px;margin-top:0.5rem;font-size:0.9rem;}
-#hamburgerMenu{position:absolute;right:1rem;top:1rem;display:flex;flex-direction:column;cursor:pointer;}
-#hamburgerMenu span{height:3px;width:25px;background:#fff;margin:4px 0;border-radius:2px;transition:0.4s;}
-#sideMenu{position:fixed;top:0;right:-300px;width:300px;height:100%;background:#009933;color:#fff;transition:0.3s;padding:1rem;z-index:3000;display:flex;flex-direction:column;overflow-y:auto;}
-#sideMenu.show{right:0;}
-#sideMenu a{color:#fff;text-decoration:none;margin:0.5rem 0;font-weight:600;font-size:1rem;}
-#sideMenu h2{margin-top:1rem;margin-bottom:0.5rem;font-size:1.1rem;}
-#sideMenu .section-content{background:#fff;color:#000;padding:1rem;border-radius:10px;margin-bottom:1rem;font-size:0.95rem;line-height:1.5;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
-nav{display:flex;justify-content:center;flex-wrap:wrap;background:#009933;position:sticky;top:105px;z-index:1500;}
-nav a{padding:0.8rem 1rem;text-decoration:none;color:#fff;font-weight:600;transition:0.3s;}
-nav a:hover,nav a.active{color:#00ff99;border-bottom:3px solid #00ff99;}
-section{padding:1rem;}
-.section-content{max-width:900px;margin:2rem auto;background:#fff;padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.15);line-height:1.7;color:#222;}
-footer{background:#007a29;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem;}
-</style>
+  <meta name="google-adsense-account" content="ca-pub-9702899463803987">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f4f4f4;color:#222;display:flex;flex-direction:column;min-height:100vh;}
+    
+    header{
+      background:#009933;
+      color:#fff;
+      text-align:center;
+      padding:1.2rem;
+      font-size:1.8rem;
+      font-weight:900;
+    }
+
+    nav{
+      background:#009933;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:1rem;
+      padding:0.7rem;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    nav a:hover{
+      color:#00ff99;
+    }
+
+    main{
+      max-width:900px;
+      margin:2rem auto;
+      background:#fff;
+      padding:2rem;
+      border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      line-height:1.7;
+    }
+
+    main h2{
+      color:#009933;
+      margin-bottom:1rem;
+    }
+
+    main p{
+      margin-bottom:1rem;
+      font-size:1rem;
+    }
+
+    footer{
+      background:#007a29;
+      color:#fff;
+      text-align:center;
+      padding:1rem;
+      margin-top:auto;
+      font-size:0.9rem;
+    }
+
+    /* Cookie banner */
+    .cookie-banner{
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:#222;
+      color:#fff;
+      padding:1rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      z-index:3000;
+    }
+
+    .cookie-banner button{
+      background:#009933;
+      border:none;
+      color:#fff;
+      padding:0.5rem 1rem;
+      font-weight:600;
+      cursor:pointer;
+      border-radius:5px;
+    }
+
+    .cookie-banner button:hover{
+      background:#00aa44;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<h1>ZPOTHUB News</h1>
- <div class="slogan">The Smart News Network</div>
-<div id="hamburgerMenu"><span></span><span></span><span></span></div>
-</header>
-
-<div id="sideMenu">
-<a href="index.html" id="menuHome">Homepage</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
+<header>ZPOTHUB News</header>
 
 <nav>
-<a href="index.html">Homepage</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="knowledgehub.html">Knowledge Hub</a>
+  <a href="global.html">Global</a>
+  <a href="africa.html">Africa</a>
+  <a href="nigeria.html">Nigeria</a>
+  <a href="sports.html">Sports</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<section class="section-content">
-<h2>Privacy & Policy at ZPOTHUB News</h2>
-<p>At ZPOTHUB News, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website.</p>
+<main>
+  <h2>Privacy Policy</h2>
 
-<h3>Information We Collect</h3>
-<ul>
-<li>Personal details like name and email when submitting forms.</li>
-<li>Non-personal data such as browsing patterns, cookies, and IP addresses.</li>
-</ul>
+  <p>
+    At <strong>ZPOTHUB News</strong>, your privacy is important to us. This Privacy Policy document explains how we collect, use, and protect your information when you visit our website.
+  </p>
 
-<h3>How We Use Your Information</h3>
-<ul>
-<li>To provide and improve our services.</li>
-<li>To communicate important updates and respond to inquiries.</li>
-<li>To comply with legal requirements and protect our rights.</li>
-</ul>
+  <h2>Information We Collect</h2>
+  <p>
+    We do not collect personal information such as names, phone numbers, or addresses unless you voluntarily provide them (for example, via a contact form).
+  </p>
 
-<h3>Cookies</h3>
-<p>We use cookies to enhance user experience, analyze site traffic, and serve personalized ads. You can manage your cookie preferences through your browser settings.</p>
+  <h2>Cookies</h2>
+  <p>
+    ZPOTHUB News uses cookies to improve user experience, analyze traffic, and serve relevant advertisements. Cookies are small files stored on your device that help websites function properly.
+  </p>
 
-<h3>Third-Party Services</h3>
-<p>We may use third-party services such as Google Analytics and AdSense, which may collect data for analytics and advertising purposes. These services adhere to their respective privacy policies.</p>
+  <h2>Google AdSense & Third-Party Ads</h2>
+  <p>
+    We use Google AdSense to display ads. Google may use cookies (including the DoubleClick cookie) to show ads relevant to your interests based on your visits to this and other websites.
+  </p>
 
-<h3>Data Security</h3>
-<p>We implement appropriate security measures to protect your personal information from unauthorized access or disclosure. However, no method is completely secure online.</p>
+  <p>
+    Users may opt out of personalized advertising by visiting Google Ads Settings.
+  </p>
 
-<h3>Policy Updates</h3>
-<p>We may update this Privacy Policy periodically. Any changes will be posted on this page with the updated date.</p>
-</section>
+  <h2>Analytics</h2>
+  <p>
+    We may use analytics tools (such as Google Analytics) to understand how visitors interact with our website. These tools collect non-personal data like browser type and pages visited.
+  </p>
 
-<footer><p>© 2025 ZPOTHUB News — Privacy & Policy</p></footer>
+  <h2>External Links</h2>
+  <p>
+    ZPOTHUB News may contain links to external websites. We are not responsible for the privacy practices or content of those websites.
+  </p>
+
+  <h2>Your Consent</h2>
+  <p>
+    By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+  </p>
+
+  <h2>Updates</h2>
+  <p>
+    This Privacy Policy may be updated from time to time. Any changes will be posted on this page.
+  </p>
+</main>
+
+<footer>
+  © 2026 ZPOTHUB News — The Smart Way to Stay Informed
+</footer>
+
+<!-- Cookie Consent -->
+<div class="cookie-banner" id="cookieBanner">
+  <span>
+    We use cookies to improve your experience and show relevant ads. By continuing, you agree to our use of cookies.
+  </span>
+  <button onclick="acceptCookies()">Accept</button>
+</div>
 
 <script>
-// Hamburger toggle
-const hamburgerMenu=document.getElementById('hamburgerMenu');
-const sideMenu=document.getElementById('sideMenu');
-hamburgerMenu.onclick=()=>sideMenu.classList.toggle('show');
+  function acceptCookies(){
+    document.getElementById('cookieBanner').style.display = 'none';
+    localStorage.setItem('zpot_cookies_accepted', 'true');
+  }
 
-// Menu navigation
-document.getElementById('menuHome').onclick=e=>{
-e.preventDefault();
-window.location.href='index.html';
-};
+  if(localStorage.getItem('zpot_cookies_accepted')){
+    document.getElementById('cookieBanner').style.display = 'none';
+  }
 </script>
 
 </body>

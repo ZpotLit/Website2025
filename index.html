@@ -2,39 +2,171 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ZPOTHUB News | Live Updates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZPOTHUB News | Trusted Global Updates</title>
+
 <link rel="icon" href="/images/logo.png" type="image/png">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987"
-     crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-9702899463803987">
+
+<!-- Google AdSense -->
+<script async
+ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987"
+ crossorigin="anonymous"></script>
+
 <style>
-* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-body {background:#f4f4f4; color:#222; display:flex; flex-direction:column; min-height:100vh; overflow:hidden;}
-header {background:#009933; padding:1rem; text-align:center; color:#fff; position:sticky; top:0; z-index:2000;}
-header h1 {font-size:2rem; font-weight:900;}
-header .slogan {background:#fff; color:#009933; padding:0.3rem 0.8rem; border-radius:8px; margin-top:0.5rem; font-size:0.9rem;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-nav {display:flex; justify-content:center; flex-wrap:wrap; background:#009933; position:sticky; top:105px; z-index:1500;}
-nav a {padding:0.8rem 1rem; text-decoration:none; color:#fff; font-weight:600; transition:0.3s;}
-nav a:hover, nav a.active {color:#00ff99; border-bottom:3px solid #00ff99;}
+body{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:#f4f4f4;
+  color:#222;
+  overflow:hidden;
+}
 
-main {flex:1; position:relative; display:flex; justify-content:center; align-items:center; text-align:center; overflow:hidden;}
+/* HEADER */
+header{
+  background:#009933;
+  color:#fff;
+  text-align:center;
+  padding:1rem;
+}
+header h1{
+  font-size:2rem;
+  font-weight:900;
+}
+header .slogan{
+  margin-top:.4rem;
+  background:#fff;
+  color:#009933;
+  display:inline-block;
+  padding:.3rem .9rem;
+  border-radius:8px;
+  font-size:.9rem;
+}
 
-/* Watermark */
-.watermark {position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; z-index:0; pointer-events:none; user-select:none;}
-.watermark h1, .watermark h2 {font-weight:900; color:rgba(0,0,0,0.08); white-space:nowrap;}
-.watermark h1 {font-size:8rem; margin-bottom:0.5rem;}
-.watermark h2 {font-size:5rem;}
+/* NAVIGATION */
+nav{
+  background:#009933;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  padding:.8rem 1rem;
+  font-weight:600;
+}
+nav a:hover{
+  color:#00ff99;
+}
 
-/* Content above watermark */
-.content-wrapper {position:relative; z-index:1; padding:2rem; max-width:700px;}
-.content-wrapper h2 {font-size:2rem; color:#009933; margin-bottom:1rem;}
-.content-wrapper p {font-size:1rem; color:#333; line-height:1.6; margin-bottom:0.8rem;}
+/* MAIN */
+main{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding:1rem;
+}
 
-footer {background:#007a29; color:#fff; text-align:center; padding:1rem; margin-top:auto;}
+/* WATERMARK */
+.watermark{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+.watermark h1,
+.watermark h2{
+  font-weight:900;
+  color:rgba(0,0,0,0.07);
+}
+.watermark h1{font-size:7rem;}
+.watermark h2{font-size:4rem;}
+
+/* CONTENT */
+.content{
+  position:relative;
+  z-index:1;
+  max-width:900px;
+  background:#ffffff;
+  padding:2.5rem;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.content h2{
+  font-size:2.2rem;
+  color:#009933;
+  margin-bottom:1.2rem;
+}
+
+.content p{
+  font-size:1.05rem;
+  line-height:1.7;
+  margin-bottom:1rem;
+  color:#333;
+}
+
+/* ADS SECTION */
+.ad-section{
+  margin:1.8rem 0;
+  display:flex;
+  justify-content:center;
+}
+
+/* FOOTER */
+footer{
+  background:#007a29;
+  color:#fff;
+  text-align:center;
+  padding:.9rem;
+  font-size:.9rem;
+}
+
+/* COOKIE BANNER (ALWAYS SHOWS) */
+#cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#111;
+  color:#fff;
+  padding:1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:9999;
+  font-size:.9rem;
+}
+#cookie-banner button{
+  background:#009933;
+  border:none;
+  color:#fff;
+  padding:.5rem 1.3rem;
+  font-weight:600;
+  cursor:pointer;
+  border-radius:5px;
+}
+#cookie-banner button:hover{
+  background:#007a29;
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -43,35 +175,75 @@ footer {background:#007a29; color:#fff; text-align:center; padding:1rem; margin-
 </header>
 
 <nav>
-  <a href="index.html" class="active">Homepage</a>
+  <a href="index.html">Home</a>
   <a href="knowledgehub.html">Knowledge Hub</a>
   <a href="global.html">Global</a>
   <a href="africa.html">Africa</a>
   <a href="nigeria.html">Nigeria</a>
   <a href="sports.html">Sports</a>
-  <a href="tv-shows.html">TV Shows</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
   <a href="privacy.html">Privacy & Policy</a>
 </nav>
 
 <main>
+
   <div class="watermark">
     <h1>ZPOTHUB</h1>
     <h2>NEWS</h2>
   </div>
 
-  <div class="content-wrapper">
+  <div class="content">
     <h2>Welcome to ZPOTHUB News</h2>
-    <p>Your trusted source for concise and accurate news updates globally and locally.</p>
-    <p>Explore Global, Africa, Nigeria, Sports sections and Broadcast Network independently, all maintained to international standards.</p>
-    <p>Navigate through the menu to stay informed with reliable, real-time reporting.</p>
+
+    <p>
+      ZPOTHUB News is a modern digital news platform designed to deliver
+      accurate, timely, and well-curated information from around the world.
+      We focus on clarity, credibility, and simplicity — helping readers
+      stay informed without noise or misinformation.
+    </p>
+
+    <p>
+      Our coverage spans Global affairs, Africa-focused reporting, Nigerian
+      news, Sports updates, and insightful educational content through our
+      Knowledge Hub. Every section is independently maintained to meet
+      international digital publishing standards.
+    </p>
+
+    <p>
+      ZPOTHUB is built for readers who value trustworthy reporting,
+      easy navigation, and a distraction-free experience across all devices.
+    </p>
+
+    <!-- AD SPACE 1 (CONTENT AD) -->
+    <div class="ad-section">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-9702899463803987"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
   </div>
+
 </main>
 
 <footer>
-  <p>©2025ZPOTHUB News — The Smart Way to Stay Informed</p>
+  © 2026 ZPOTHUB News — The Smart Way to Stay Informed
 </footer>
+
+<!-- COOKIE NOTICE (NO STORAGE, ALWAYS SHOWS) -->
+<div id="cookie-banner">
+  <span>
+    This website uses cookies for analytics, advertising, and performance
+    optimization. By continuing to use this site, you acknowledge this notice.
+  </span>
+  <button onclick="this.parentElement.style.display='none'">Accept</button>
+</div>
 
 </body>
 </html>

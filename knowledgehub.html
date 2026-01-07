@@ -4,193 +4,115 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ZPOTHUB News | Knowledge Hub</title>
-<link rel="icon" href="/images/logo.png" type="image/png<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987"
-     crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-9702899463803987">
+<link rel="icon" href="/images/logo.png" type="image/png">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9702899463803987"
+crossorigin="anonymous"></script>
+
 <style>
 * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-body {background:#f4f4f4; color:#222; display:flex; flex-direction:column; min-height:100vh;}
-header {background:#009933; color:#fff; text-align:center; padding:1rem; position:sticky; top:0; z-index:1000;}
-header h1 {font-size:2rem; font-weight:900;}
-header .slogan {margin-top:0.5rem; font-size:0.9rem; background:#fff; color:#009933; display:inline-block; padding:0.3rem 0.8rem; border-radius:8px;}
-nav {display:flex; justify-content:center; flex-wrap:wrap; background:#009933;}
-nav a {color:#fff; text-decoration:none; padding:0.8rem 1rem; font-weight:600;}
-nav a:hover, nav a.active {color:#00ff99; border-bottom:3px solid #00ff99;}
-main {flex:1; padding:2rem; max-width:1200px; margin:auto;}
-.knowledge-article {background:#fff; padding:1.5rem; margin-bottom:2rem; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.05);}
-.knowledge-article h2 {font-size:1.8rem; color:#007a29; margin-bottom:0.8rem;}
-.knowledge-article h3 {font-size:1.2rem; margin-top:1rem; margin-bottom:0.5rem; color:#009933;}
-.knowledge-article p {line-height:1.6; margin-bottom:0.8rem; color:#333;}
-footer {background:#007a29; color:#fff; text-align:center; padding:1.2rem; margin-top:auto;}
+body {background:#f4f4f4; color:#222; display:flex; flex-direction:column; min-height:100vh; overflow-x:hidden;}
+
+/* HEADER */
+header{background:#009933; padding:1rem; text-align:center; color:#fff;}
+header h1{font-size:2rem; font-weight:900;}
+header .slogan{background:#fff; color:#009933; padding:0.3rem 0.8rem; border-radius:8px; margin-top:0.5rem; font-size:0.9rem; display:inline-block;}
+
+/* NAVIGATION */
+nav{display:flex; justify-content:center; flex-wrap:wrap; background:#009933; position:sticky; top:0; z-index:1500;}
+nav a{padding:0.8rem 1rem; text-decoration:none; color:#fff; font-weight:600; transition:0.3s;}
+nav a:hover, nav a.active{color:#00ff99; border-bottom:3px solid #00ff99;}
+
+/* MAIN */
+main{flex:1; position:relative; display:flex; justify-content:center; text-align:left; padding:2rem; overflow-x:hidden;}
+.content-wrapper{position:relative; z-index:1; max-width:900px; width:100%;}
+.content-wrapper h2{font-size:2rem; color:#009933; margin-bottom:1rem;}
+.content-wrapper h3{font-size:1.5rem; color:#007a29; margin-top:1.2rem; margin-bottom:0.6rem;}
+.content-wrapper p{font-size:1rem; color:#333; line-height:1.6; margin-bottom:0.8rem;}
+
+/* AD SPACE */
+.ad-space{margin-top:2rem;}
+
+/* FOOTER */
+footer{background:#007a29; color:#fff; text-align:center; padding:1rem; margin-top:2rem;}
+
+/* COOKIE BANNER */
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#000;
+  color:#fff;
+  padding:1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:9999;
+}
+.cookie-banner p{font-size:0.9rem; max-width:75%;}
+.cookie-banner button{background:#00ff99; border:none; padding:0.6rem 1.2rem; font-weight:700; border-radius:6px; cursor:pointer;}
 </style>
 </head>
 <body>
 
 <header>
   <h1>ZPOTHUB News</h1>
-  <div class="slogan">Knowledge Hub</div>
+  <div class="slogan">The Smart News Network</div>
 </header>
 
 <nav>
   <a href="index.html">Homepage</a>
+  <a href="knowledgehub.html" class="active">Knowledge Hub</a>
+  <a href="global.html">Global</a>
+  <a href="africa.html">Africa</a>
+  <a href="nigeria.html">Nigeria</a>
+  <a href="sports.html">Sports</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy & Policy</a>
 </nav>
 
 <main>
-  <!-- Article 1: Health -->
-  <article class="knowledge-article">
-    <h2>Top 5 Habits for a Healthier Life</h2>
-    <h3>1. Balanced Nutrition</h3>
-    <p>Eating a variety of nutrient-rich foods ensures optimal body function, supports immunity, and boosts energy levels.</p>
-    <h3>2. Regular Exercise</h3>
-    <p>Engage in at least 30 minutes of physical activity daily to maintain heart health, flexibility, and mental well-being.</p>
-    <h3>3. Quality Sleep</h3>
-    <p>Prioritize 7-9 hours of restful sleep each night to restore your body and mind effectively.</p>
-    <h3>4. Stress Management</h3>
-    <p>Practice mindfulness, meditation, or hobbies to manage daily stress and maintain emotional balance.</p>
-    <h3>5. Routine Checkups</h3>
-    <p>Regular medical screenings help detect potential health issues early, enhancing longevity and quality of life.</p>
-  </article>
+  <div class="content-wrapper">
+    <h2>Knowledge Hub</h2>
+    <p>Welcome to ZPOTHUB Knowledge Hub — your source for informative and practical content on health, lifestyle, finance, and general knowledge to improve everyday living.</p>
 
-  <!-- Article 2: Business -->
-  <article class="knowledge-article">
-    <h2>Essential Strategies for Business Growth in 2025</h2>
-    <h3>1. Embrace Digital Transformation</h3>
-    <p>Integrate technology into business operations to improve efficiency, reach wider audiences, and stay competitive.</p>
-    <h3>2. Understand Your Market</h3>
-    <p>Conduct regular market research to align your products/services with customer needs and emerging trends.</p>
-    <h3>3. Focus on Customer Experience</h3>
-    <p>Deliver exceptional service and engagement to build loyalty and repeat business.</p>
-    <h3>4. Diversify Revenue Streams</h3>
-    <p>Explore new products, services, or markets to mitigate risks and ensure steady growth.</p>
-    <h3>5. Invest in Team Development</h3>
-    <p>Provide training and resources to enhance employee skills, motivation, and productivity.</p>
-  </article>
+    <h3>Healthy Living</h3>
+    <p>Discover tips on balanced diets, exercise routines, mental wellness, and preventative healthcare strategies to keep your body and mind in top shape.</p>
 
-  <!-- Article 3: Finance -->
-  <article class="knowledge-article">
-    <h2>Smart Financial Planning for Long-Term Stability</h2>
-    <h3>1. Budget Effectively</h3>
-    <p>Track income and expenses meticulously to optimize spending and maximize savings.</p>
-    <h3>2. Save Consistently</h3>
-    <p>Set aside a fixed percentage of your income regularly to build an emergency fund and future wealth.</p>
-    <h3>3. Invest Wisely</h3>
-    <p>Diversify investments across stocks, bonds, real estate, and other instruments based on your risk appetite.</p>
-    <h3>4. Monitor Credit</h3>
-    <p>Maintain good credit habits by paying bills on time and avoiding unnecessary debt.</p>
-    <h3>5. Seek Expert Advice</h3>
-    <p>Consult financial advisors to make informed investment and tax decisions.</p>
-  </article>
+    <h3>Business & Finance</h3>
+    <p>Learn how to manage personal finances, invest wisely, understand market trends, and explore entrepreneurial opportunities in Nigeria and globally.</p>
 
-  <!-- Article 4: Lifestyle -->
-  <article class="knowledge-article">
-    <h2>Enhancing Daily Lifestyle for Productivity</h2>
-    <h3>1. Structured Routine</h3>
-    <p>Organize your day with a consistent schedule to maximize efficiency and reduce stress.</p>
-    <h3>2. Healthy Diet</h3>
-    <p>Fuel your body with nutritious meals to maintain energy and focus throughout the day.</p>
-    <h3>3. Active Mindset</h3>
-    <p>Engage in learning, reading, and creative activities to stimulate cognitive growth.</p>
-    <h3>4. Minimalist Approach</h3>
-    <p>Simplify your surroundings and tasks to avoid clutter and distractions.</p>
-    <h3>5. Social Connections</h3>
-    <p>Maintain meaningful relationships for emotional well-being and networking opportunities.</p>
-  </article>
+    <h3>Lifestyle & Productivity</h3>
+    <p>Explore practical advice for time management, work-life balance, effective habits, and tools that boost productivity and personal growth.</p>
 
-  <!-- Article 5: Technology -->
-  <article class="knowledge-article">
-    <h2>Emerging Tech Trends Shaping 2025</h2>
-    <h3>1. Artificial Intelligence</h3>
-    <p>AI applications continue to transform industries, enhancing automation, analytics, and decision-making.</p>
-    <h3>2. Blockchain</h3>
-    <p>Decentralized systems improve security, transparency, and efficiency in finance, supply chains, and beyond.</p>
-    <h3>3. Internet of Things (IoT)</h3>
-    <p>Connected devices offer smarter homes, cities, and workplaces through real-time data and automation.</p>
-    <h3>4. Augmented & Virtual Reality</h3>
-    <p>AR/VR technologies revolutionize entertainment, education, and professional training experiences.</p>
-    <h3>5. Cybersecurity</h3>
-    <p>Protecting digital assets is critical as cyber threats become more sophisticated and frequent.</p>
-  </article>
+    <h3>Technology & Education</h3>
+    <p>Stay informed about the latest tech trends, online learning resources, and innovative tools to enhance knowledge and skill development.</p>
 
-  <!-- Article 6: Education -->
-  <article class="knowledge-article">
-    <h2>Modern Learning Strategies for Academic Success</h2>
-    <h3>1. Personalized Learning</h3>
-    <p>Adapt study methods to individual strengths and weaknesses for better retention.</p>
-    <h3>2. Technology Integration</h3>
-    <p>Utilize educational apps and online platforms for interactive and flexible learning experiences.</p>
-    <h3>3. Critical Thinking</h3>
-    <p>Encourage analysis, evaluation, and problem-solving in everyday learning.</p>
-    <h3>4. Collaborative Projects</h3>
-    <p>Work with peers to foster teamwork, communication, and diverse perspectives.</p>
-    <h3>5. Lifelong Learning</h3>
-    <p>Continuously seek knowledge beyond formal education to stay competitive and informed.</p>
-  </article>
-
-  <!-- Article 7: Science -->
-  <article class="knowledge-article">
-    <h2>Breakthrough Scientific Discoveries in 2025</h2>
-    <h3>1. Renewable Energy Innovations</h3>
-    <p>New solar, wind, and battery technologies drive sustainable power solutions globally.</p>
-    <h3>2. Medical Advancements</h3>
-    <p>Cutting-edge treatments and therapies improve patient outcomes and extend life expectancy.</p>
-    <h3>3. Space Exploration</h3>
-    <p>Private and governmental missions push the boundaries of space travel and research.</p>
-    <h3>4. Climate Science</h3>
-    <p>Enhanced models and monitoring systems help mitigate the impact of climate change.</p>
-    <h3>5. AI in Research</h3>
-    <p>Artificial intelligence accelerates data analysis and discovery across multiple scientific fields.</p>
-  </article>
-
-  <!-- Article 8: Career -->
-  <article class="knowledge-article">
-    <h2>Career Growth Strategies for Professionals</h2>
-    <h3>1. Skill Enhancement</h3>
-    <p>Continuously develop technical and soft skills relevant to your industry.</p>
-    <h3>2. Networking</h3>
-    <p>Build meaningful professional relationships to unlock opportunities and mentorship.</p>
-    <h3>3. Goal Setting</h3>
-    <p>Define clear, measurable objectives to track progress and achieve success.</p>
-    <h3>4. Adaptability</h3>
-    <p>Be flexible to changes and emerging trends to maintain relevance in your career.</p>
-    <h3>5. Work-Life Balance</h3>
-    <p>Maintain well-being by balancing professional responsibilities with personal life.</p>
-  </article>
-
-  <!-- Article 9: Mind & Spirit -->
-  <article class="knowledge-article">
-    <h2>Mental Health and Personal Growth</h2>
-    <h3>1. Mindfulness Practices</h3>
-    <p>Incorporate meditation and awareness exercises to reduce stress and enhance focus.</p>
-    <h3>2. Emotional Intelligence</h3>
-    <p>Develop self-awareness, empathy, and interpersonal skills for healthier relationships.</p>
-    <h3>3. Gratitude & Reflection</h3>
-    <p>Practice daily gratitude and reflection to improve mood and perspective.</p>
-    <h3>4. Cognitive Exercises</h3>
-    <p>Engage in brain-training activities to maintain mental agility and creativity.</p>
-    <h3>5. Purposeful Living</h3>
-    <p>Define personal values and goals to guide meaningful life decisions.</p>
-  </article>
-
-  <!-- Article 10: Travel -->
-  <article class="knowledge-article">
-    <h2>Top Travel Destinations for 2025</h2>
-    <h3>1. Sustainable Tourism</h3>
-    <p>Choose eco-friendly destinations and practices to minimize environmental impact.</p>
-    <h3>2. Cultural Immersion</h3>
-    <p>Explore local traditions, cuisine, and lifestyles for authentic experiences.</p>
-    <h3>3. Adventure Travel</h3>
-    <p>Engage in activities like hiking, diving, or safaris for thrilling and memorable trips.</p>
-    <h3>4. Digital Nomad Spots</h3>
-    <p>Select destinations with reliable connectivity and co-working spaces for work-travel balance.</p>
-    <h3>5. Health & Safety</h3>
-    <p>Prioritize destinations with strong medical support, sanitation, and safety regulations.</p>
-  </article>
-
+    <!-- Ad Space -->
+    <div class="ad-space">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9702899463803987"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
 </main>
 
 <footer>
-  <p>© 2025 ZPOTHUB News — Knowledge Hub</p>
+  <p>© 2026 ZPOTHUB News — The Smart Way to Stay Informed</p>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>This website uses cookies to improve user experience, analyze traffic, and support advertising services.</p>
+  <button onclick="document.getElementById('cookieBanner').style.display='none'">Accept</button>
+</div>
 
 </body>
 </html>
