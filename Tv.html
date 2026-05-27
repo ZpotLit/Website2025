@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZPOTHUB News | Live TV</title>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+body {
+  background:#f4f6f9;
+  color:#222;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* HEADER */
+header {
+  background:#008f39;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+header h1 {
+  font-size:28px;
+}
+
+/* NAV */
+nav {
+  background:#006e2b;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+nav a {
+  color:white;
+  text-decoration:none;
+  padding:15px 18px;
+  font-weight:600;
+}
+nav a:hover,
+nav a.active {
+  background:#004d1f;
+}
+
+/* GRID */
+.container {
+  max-width:1000px;
+  margin:30px auto;
+  padding:15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card {
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+}
+.card h3 {
+  color:#008f39;
+  font-size:18px;
+}
+
+/* FULLSCREEN PLAYER */
+.player {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  display:none;
+  flex-direction:column;
+  z-index:9999;
+}
+.player iframe {
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* CLOSE BUTTON */
+.closeBtn {
+  position:absolute;
+  top:15px;
+  right:20px;
+  background:red;
+  color:white;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+  z-index:10000;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:20px;
+  background:#006e2b;
+  color:white;
+  margin-top:auto;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>ZPOTHUB News - Live TV</h1>
+  <p>Click a channel to watch live broadcast</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="knowledgehub.html">Knowledge Hub</a>
+  <a href="global.html">Global</a>
+  <a href="africa.html">Africa</a>
+  <a href="nigeria.html">Nigeria</a>
+  <a href="sports.html">Sports</a>
+  <a href="tv.html" class="active">Live TV</a>
+</nav>
+
+<!-- CHANNEL LIST -->
+<div class="container">
+
+  <!-- Al Jazeera (official live) -->
+  <div class="card" onclick="playTV('https://www.youtube.com/embed/-upyPouRrB8?autoplay=1')">
+    <h3>Al Jazeera (Live)</h3>
+  </div>
+
+  <!-- Arise News (channel live) -->
+  <div class="card" onclick="playTV('https://www.youtube.com/channel/UCyEJX-kSj0kOOCS7Qlq2G7g/live?autoplay=1')">
+    <h3>Arise News (Live)</h3>
+  </div>
+
+  <!-- Channels TV (channel live) -->
+  <div class="card" onclick="playTV('https://www.youtube.com/channel/UCEXGDNclvmg6RW0vipJYsTQ/live?autoplay=1')">
+    <h3>Channels TV (Live)</h3>
+  </div>
+
+  <!-- DW News (live where available) -->
+  <div class="card" onclick="playTV('https://www.youtube.com/channel/UCgSeUWrJO4v8rJ9nJRfD8Qg/live?autoplay=1')">
+    <h3>DW News (Live)</h3>
+  </div>
+
+  <!-- France 24 (live where available) -->
+  <div class="card" onclick="playTV('https://www.youtube.com/channel/UCt9PdvF0vPmaJ6vQT8HOjrg/live?autoplay=1')">
+    <h3>France 24 (Live)</h3>
+  </div>
+
+  <!-- Sky News (live where available) -->
+  <div class="card" onclick="playTV('https://www.youtube.com/channel/UCPAeg8p0ktwYv5R7v0lxS1w/live?autoplay=1')">
+    <h3>Sky News (Live)</h3>
+  </div>
+
+</div>
+
+<!-- FULLSCREEN PLAYER -->
+<div class="player" id="player">
+  <button class="closeBtn" onclick="closePlayer()">X Close</button>
+  <iframe id="tvFrame" src=""></iframe>
+</div>
+
+<footer>
+  © 2026 ZPOTHUB News – Live TV
+</footer>
+
+<script>
+function playTV(url){
+  const player = document.getElementById("player");
+  const frame = document.getElementById("tvFrame");
+  frame.src = url;
+  player.style.display = "flex";
+}
+
+function closePlayer(){
+  const player = document.getElementById("player");
+  const frame = document.getElementById("tvFrame");
+  frame.src = "";
+  player.style.display = "none";
+}
+</script>
+
+</body>
+</html>
